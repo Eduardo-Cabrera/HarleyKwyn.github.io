@@ -7,20 +7,20 @@ url:              http://harleykwyn.github.io
 # Owner/author information
 owner:
   name:           Your Name
-  avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  avatar:         http://25.media.tumblr.com/eacc522f4fecfecfc39d99f9e5d0a7e4/tumblr_mynbaiN1F71r2cphco5_1280.jpg
+  bio:            "Hack Reactor Student. biohacker and hacker in general "
+  email:          kwyn.meagher@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
+  twitter:        https://twitter.com/HarleyKwyn
   facebook:       
-  github:         
+  github:         https://github.com/harleykwyn
   stackexchange:  
-  linkedin:       
+  linkedin:       http://www.linkedin.com/pub/kwyn-meagher/1a/a70/46b
   instagram:      
   flickr:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:   
+  google_plus:    https://plus.google.com/+KwynMeagher
 
 # Background image to be tiled on all pages
 background: ps_neutral.png
@@ -33,15 +33,15 @@ bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
-links:
-  - title: Theme Setup
-    url: /theme-setup
-  - title: External Link
-    url: http://mademistakes.com
-    external: true
+# links:
+#   - title: Theme Setup
+#     url: /theme-setup
+#   - title: External Link
+#     url: http://mademistakes.com
+#     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    America/California
 future:      true
 pygments:    true
 markdown:    kramdown
