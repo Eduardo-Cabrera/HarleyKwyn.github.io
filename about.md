@@ -4,7 +4,7 @@ permalink: /about/
 title: About Me
 tags: [Bio, personal, About me, Software Engineer]
 image:
-  feature: BigSur.jpg
+  feature: BigSur2.jpg
 share: true
 ---
 Junior of the January 2014 [Hack Reactor](http://www.hackreactor.com/) Cohort
