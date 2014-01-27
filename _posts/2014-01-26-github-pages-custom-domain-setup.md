@@ -26,6 +26,7 @@ how can we fix that?
    CNAME file should point to your domain name this is easily done in the root of your director with something like
    {% highlight bash%}
    Kwyn:HarleyKwyn.github.io kwyn$ echo "harleykwyn.com" > CNAME
+   {% endhighlight %}
 4. Push your changes
 
 And you're done and on your way! Happy blogging
