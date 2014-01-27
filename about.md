@@ -4,9 +4,7 @@ permalink: /about/
 title: About Me
 tags: [Bio, personal, About me, Software Engineer]
 image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: BigSur.jpg
 share: true
 ---
 Junior of the January 2014 [Hack Reactor](http://www.hackreactor.com/) Cohort
