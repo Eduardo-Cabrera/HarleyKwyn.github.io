@@ -84,7 +84,7 @@
 
 {% include scripts.html %}	        
  <script>
-      var width = $("#post").width();
+      var width = $("#post").width() -1;
       gapi.comments.render('comments', {
           href: window.location,
           width: width,
