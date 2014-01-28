@@ -51,7 +51,7 @@ Another helpful thing to know is that you can test if your edits will build usin
 ~/username.github.io jekyll build
 {% endhighlight %}
 
-And then you check how it looks on the localhost: 4000 post if you change the url to look like this:
+And then you check how it looks on the `localhost:4000` post if you change the url to look like this:
 
 {% highlight YAML %}
 title:            Harley Kwyn Hacking
