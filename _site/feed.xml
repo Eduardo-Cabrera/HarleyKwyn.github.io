@@ -4,13 +4,91 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://harleykwyn.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://harleykwyn.com" />
-<updated>2014-01-28T20:53:40+00:00</updated>
+<updated>2014-01-28T22:36:21+00:00</updated>
 <id>http://harleykwyn.com/</id>
 <author>
   <name>Kwyn Alice Meagher</name>
   <uri>http://harleykwyn.com/</uri>
   <email>kwyn.meagher@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Google Comments in Jekyll]]></title>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/google-comments-in-jekyll/" />
+  <id>http://harleykwyn.com/google-comments-in-jekyll</id>
+  <updated>2014-01-28T00:00:00-00:00</updated>
+  <published>2014-01-28T00:00:00+00:00</published>
+  
+  <author>
+    <name>Kwyn Alice Meagher</name>
+    <uri>http://harleykwyn.com</uri>
+    <email>kwyn.meagher@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Last post in this unofficial blog posts about blogging series. &lt;/p&gt;
+
+&lt;p&gt;Without a discussion about what you&amp;#39;re posting your blog isn&amp;#39;t very valueble. Disque can be easy to use but if you&amp;#39;re like me you beleive in google+ and would love to have that as the commenting platform for your blog.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s jump into how to get this installed.&lt;/p&gt;
+
+&lt;h1&gt;Installation&lt;/h1&gt;
+
+&lt;p&gt;Be sure that you have jQuery included in the scripts at the beginning of your post layout. &lt;/p&gt;
+
+&lt;p&gt;typically found under your &lt;code&gt;_includes&lt;/code&gt; file &lt;code&gt;scripts.html&lt;/code&gt; and should look kind of like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Find where you want your comments to appear in your site&amp;#39;s HTML. Preferablly the comments will be post specific so it&amp;#39;s mostl likely to be found in &lt;code&gt;_layout&lt;/code&gt; in something that look like &lt;code&gt;post.html&lt;/code&gt; and in a wrapper, quite possibly a &lt;code&gt;&amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt;&lt;/code&gt; tab&lt;/p&gt;
+
+&lt;p&gt;Copy this div into that container&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;commentscounter&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;gapi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;commentcount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;commentscounter&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Setting up Google Authorship&lt;/h1&gt;
+
+&lt;p&gt;So for this script to work, Google needs to be sure you&amp;#39;re associated with this page. To do this we need to setup Google Authorship.&lt;/p&gt;
+
+&lt;p&gt;This can be done by navigating to your Google+ profile.&lt;/p&gt;
+
+&lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a defautl icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;
+&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Then on the left you&amp;#39;ll click &lt;code&gt;Edit Profile&lt;/code&gt;
+&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Now scroll all the way down to the links section and click edit
+&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Then scroll down to to &lt;code&gt;Contributor to&lt;/code&gt; section and &lt;code&gt;add a custom link&lt;/code&gt; that points to your main domain name or &lt;em&gt;username&lt;/em&gt;.github.io
+&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Great now you&amp;#39;re the author of your blog. Not that you weren&amp;#39;t before, but now you&amp;#39;re ordained by the all might Google.&lt;/p&gt;
+
+&lt;h1&gt;Linking your Google account to your page&lt;/h1&gt;
+
+&lt;p&gt;So one last step add a link to your Google+ profile to your page. Using the following code. the &lt;code&gt;href&lt;/code&gt; should be your profile URL + &lt;code&gt;?rel=author&lt;/code&gt; otherwise Google will not &lt;em&gt;relate&lt;/em&gt; your authorship to the page.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/+YourProfileName?&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;   rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll notice my name in the footer next to the copy write symbol, I went ahead and sneakily put it there in the &lt;code&gt;footer.html&lt;/code&gt; template. Like so:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/+KwynMeagher?rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; Kwyn Alice Meagher &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now get commenting!&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -63,7 +141,7 @@ Another helpful thing to know is that you can test if your edits will build usin
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;~/username.github.io jekyll build
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;And then you check how it looks on the localhost: 4000 post if you change the url to look like this:&lt;/p&gt;
+&lt;p&gt;And then you check how it looks on the &lt;code&gt;localhost:4000&lt;/code&gt; post if you change the url to look like this:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;            &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Harley Kwyn Hacking&lt;/span&gt;
 &lt;span class=&quot;l-Scalar-Plain&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Hacking ALL the things&lt;/span&gt; 
