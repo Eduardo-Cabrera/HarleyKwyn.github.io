@@ -5,7 +5,7 @@ description: "Start a discussion using google comments."
 modified: 2014-01-28
 tags: [github.io, github, Github Pages, tutorials, Google, comments]
 image:
-  feature: imac_and_coffee.jpg
+  feature: keyboard_watch.jpg
 comments: true
 share: true
 ---
