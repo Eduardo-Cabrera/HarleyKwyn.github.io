@@ -2,27 +2,103 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Harley Kwyn Hacking</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://harleykwyn.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="http://harleykwyn.github.io" />
-<updated>2014-01-28T05:51:40+00:00</updated>
-<id>http://harleykwyn.github.io/</id>
+<link rel="self" type="application/atom+xml" href="http://harleykwyn.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://harleykwyn.com" />
+<updated>2014-01-28T20:39:04+00:00</updated>
+<id>http://harleykwyn.com/</id>
 <author>
   <name>Kwyn Alice Meagher</name>
-  <uri>http://harleykwyn.github.io/</uri>
+  <uri>http://harleykwyn.com/</uri>
   <email>kwyn.meagher@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[Slick jekyll themes + Github Pages]]></title>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" />
+  <id>http://harleykwyn.com/slick-jekyll-themes-and-github-pages</id>
+  <updated>2014-01-28T00:00:00-00:00</updated>
+  <published>2014-01-26T00:00:00+00:00</published>
+  
+  <author>
+    <name>Kwyn Alice Meagher</name>
+    <uri>http://harleykwyn.com</uri>
+    <email>kwyn.meagher@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-can-we-fix-that&quot;&gt;How can we fix that?&lt;/h3&gt;
+
+&lt;p&gt;Well for ~~lazy~~ clever people like you and me we have our google fu to find themes like &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;these&lt;/a&gt;. There are many more though so make sure to go explore! Don’t want all of our blogs to look the same after all.&lt;/p&gt;
+
+&lt;p&gt;If we’re starting from scratch we can just fork the repo from the source and then rename the repo to the standard &lt;em&gt;username&lt;/em&gt;.github.io&lt;/p&gt;
+
+&lt;p&gt;Let’s say we want to use &lt;a href=&quot;http://jekyllthemes.org/themes/herringcove-theme/&quot;&gt;this&lt;/a&gt; theme. &lt;/p&gt;
+
+&lt;p&gt;You’ll got to the “Home Page” and fork the repo&lt;/p&gt;
+
+&lt;p&gt;Now rename the repo to your &lt;em&gt;username&lt;/em&gt;.github.io . To do this just got to the repo settings and replace “herring-cove” with “&lt;em&gt;username&lt;/em&gt;.github.io”&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;  ~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone username.github.io
+  ~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;username.github.io
+  ~/username.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now open up this file and clear out anything you don’t want. Be sure to also recreate your CNAME file if you’re using a custom URL. This is covered in my previous post in step three. &lt;/p&gt;
+
+&lt;p&gt;Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an &lt;em&gt;drafts folder int he root of your _username&lt;/em&gt;.github.io repo.&lt;/p&gt;
+
+&lt;p&gt;Some important things to note are editing your _config.yml file so that the url is pointing at your github.io page or custom url.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;            &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Harley Kwyn Hacking&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Hacking ALL the things&lt;/span&gt; 
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;l-Scalar-Plain&quot;&gt;http://harleykwyn.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once you have that basic configuration done then you can edit whatever else you like in the repo and push it to your github page.
+Another helpful thing to know is that you can test if your edits will build using you can run jekyll from the local repo file using the following comand:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;~/username.github.io jekyll build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And then you check how it looks on the localhost: 4000 post if you change the url to look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;            &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Harley Kwyn Hacking&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Hacking ALL the things&lt;/span&gt; 
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;              &lt;span class=&quot;l-Scalar-Plain&quot;&gt;localhost:4000&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and then run this command in your local repo&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;~/username.github.io jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then point your browser at localhost:4000 and you can tinker with it. More on different Jekyll server modes can be found in the &lt;a href=&quot;http://jekyllrb.com/docs/usage/&quot;&gt;Jekyll documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Alright! go have fun and build some slick looking sites.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllthemes.org/themes/herringcove-theme/&quot;&gt;Jekyll themes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Custom domains and github pages]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.github.io/github-pages-custom-domain-setup/" />
-  <id>http://harleykwyn.github.io/github-pages-custom-domain-setup</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/github-pages-custom-domain-setup/" />
+  <id>http://harleykwyn.com/github-pages-custom-domain-setup</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.github.io</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Github pages are awesome, and with jekyll and cool themes–like the one I’m using right now–you can make a rather polished looking blog in no time. Problem is… that ugly URL up there. &lt;em&gt;username&lt;/em&gt;.github.io. Wait this is my page! Not github’s…&lt;/p&gt;
@@ -38,8 +114,8 @@
   &lt;li&gt;Configure DNS at GoDaddy.com
     &lt;ol&gt;
       &lt;li&gt;When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.&lt;/li&gt;
-      &lt;li&gt;Click Edit and add two “A (host)”” to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://harleykwyn.github.io/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://harleykwyn.github.io/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;Click Edit and add two “A (host)”” to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot; /&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;Create a CNAME file in your &lt;em&gt;username&lt;/em&gt;.github.io repo
@@ -58,20 +134,20 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.github.io/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.github.io&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion, Closure, and Iteration]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.github.io/Recursion-closure-and-iteration/" />
-  <id>http://harleykwyn.github.io/Recursion-closure-and-iteration</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/Recursion-closure-and-iteration/" />
+  <id>http://harleykwyn.com/Recursion-closure-and-iteration</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-23T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.github.io</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
@@ -156,7 +232,37 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 &lt;p&gt;For larger problems recursion may run into space issues if you are not closing scope after each recursive call. &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.github.io/Recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.github.io&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/Recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Impostor Syndrome]]></title>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/impostor-syndrom/" />
+  <id>http://harleykwyn.com/impostor-syndrom</id>
+  <updated>2014-01-26T00:00:00-00:00</updated>
+  <published>2014-01-11T00:00:00+00:00</published>
+  
+  <author>
+    <name>Kwyn Alice Meagher</name>
+    <uri>http://harleykwyn.com</uri>
+    <email>kwyn.meagher@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I’m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.&lt;/p&gt;
+
+&lt;p&gt;The way to deal with this is to make sure that whoever is typing, is following the verbal logic that the other pair is dictating. Never should one person be typing out code silently without input of the other pair. If you find your self sitting in silence and your pair is typing away without a word you should stop your pair and ask to drive for a moment and do the typing while they explain their logic to you.&lt;/p&gt;
+
+&lt;p&gt;Even when this balance between “driving” and “navigating” is achieved there’s a key question that I ask myself.&lt;/p&gt;
+
+&lt;p&gt;Can I complete this prompt on my own, from scratch. If the answer in my head is yes, I attempt to go do it on my own and if I fail then I seek out help. This is not ideal though if you can’t implement the same code that you just wrote with your pair by yourself, ideally you will follow the driving and navigating paradigm as best as possible..&lt;/p&gt;
+
+&lt;p&gt;This paradigm allows for a few things to happen. The driver acts as an interpreter for the navigator. If the navigator’s logic is not sound the driver acts as a check against any faults in the logic. It also, in turn, allows the driver to experience the implementation of logic that may not be entirely aligned with their own.&lt;/p&gt;
+
+&lt;p&gt;So if you find yourself not driving, and instead navigating and coming up with logic, you should not feel like an impostor. You are the one coming up with the logic that makes the code work in the desired fashion and if you are driving, then you are also demonstrating the skills to interpret sound logic into code.&lt;/p&gt;
+
+&lt;p&gt;Just remember, the majority of coders throughout their life will feel like they are in impostor. You’re not alone. Keep calm and code on.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
