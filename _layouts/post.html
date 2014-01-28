@@ -47,7 +47,10 @@
             <li class="googleplus"><a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google Plus"><span class="count"><i class="icon-google-plus-sign"></i> +1</span></a></li>
           </ul>
           <!-- google comment attempted to be added here attempt -->
-          <div id="comments"></div>
+        </div><!-- /.social-share -->{% endif %}
+
+      </footer>
+       <div id="comments"></div>
           <script>
                 gapi.comments.render('comments', {
                 href: window.location,
@@ -56,9 +59,6 @@
                 view_type: 'FILTERED_POSTMOD'
             });
           </script>
-        </div><!-- /.social-share -->{% endif %}
-
-      </footer>
     </div><!-- /.entry-content -->
     {% if site.related_posts.size %}
     <div class="read-more">
