@@ -28,10 +28,13 @@ Find where you want your comments to appear in your site's HTML. Preferablly the
 
 Copy this div into that container
 {% highlight HTML %}
-<div id="commentscounter"></div>
-  <script>
-  gapi.commentcount.render('commentscounter', {
-      href: window.location
+<div id="comments"></div>
+<script>
+  gapi.comments.render('comments', {
+      href: window.location,
+      width: '624',
+      first_party_property: 'BLOGGER',
+      view_type: 'FILTERED_POSTMOD'
   });
 </script>
 {% endhighlight%}
