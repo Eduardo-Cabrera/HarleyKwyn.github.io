@@ -32,11 +32,11 @@ Now rename the repo to your _username_.github.io . To do this just got to the re
   ~/username.github.io
 {% endhighlight %}
 
-Now open up this file and clear out anything you don't want. Be sure to also recreate your CNAME file if you're using a custom URL. This is covered in my previous post in step three. 
+Now open up this file and clear out anything you don't want. Be sure to also recreate your `CNAME` file if you're using a custom URL. This is covered in my previous post in step three. 
 
-Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an _drafts folder int he root of your _username_.github.io repo.
+Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an `_.drafts` folder int he root of your _username_.github.io repo.
 
-Some important things to note are editing your _config.yml file so that the url is pointing at your github.io page or custom url.
+Some important things to note are editing your `_config.yml` file so that the url is pointing at your github.io page or custom url.
 
 {% highlight YAML %}
 title:            Harley Kwyn Hacking
@@ -65,7 +65,7 @@ and then run this command in your local repo
 ~/username.github.io jekyll serve
 {% endhighlight %}
 
-Then point your browser at localhost:4000 and you can tinker with it. More on different Jekyll server modes can be found in the [Jekyll documentation](http://jekyllrb.com/docs/usage/)
+Then point your browser at `localhost:4000` and you can tinker with it. More on different Jekyll server modes can be found in the [Jekyll documentation](http://jekyllrb.com/docs/usage/)
 
 Alright! go have fun and build some slick looking sites.
 
