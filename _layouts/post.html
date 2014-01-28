@@ -48,18 +48,14 @@
           </ul>
           <!-- google comment attempted to be added here attempt -->
         </div><!-- /.social-share -->{% endif %}
-
       </footer>
-       <div id="comments"></div>
+    </div><!-- /.entry-content -->
+    <div id="commentscounter"></div>
           <script>
-                gapi.comments.render('comments', {
-                href: window.location,
-                width: '624',
-                first_party_property: 'BLOGGER',
-                view_type: 'FILTERED_POSTMOD'
+            gapi.commentcount.render('commentscounter', {
+                href: window.location
             });
           </script>
-    </div><!-- /.entry-content -->
     {% if site.related_posts.size %}
     <div class="read-more">
       {% for post in site.related_posts limit:1 %}
