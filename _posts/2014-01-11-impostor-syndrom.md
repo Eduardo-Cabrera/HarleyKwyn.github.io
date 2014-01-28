@@ -3,7 +3,7 @@ layout: post
 title: Impostor Syndrome
 description: "What am I even doing here?"
 modified: 2014-01-26
-tags: [recursion, mapping function, optimization, perfJS]
+tags: [impostor syndrom, women who code, LGBT]
 image:
   feature: frustration.jpg
 comments: true
