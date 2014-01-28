@@ -44,7 +44,9 @@ bing_verify:
 timezone:    America/California
 future:      true
 pygments:    true
-markdown:    kramdown
+markdown:    redcarpet
+redcarpet:
+  extensions: ["strikethrough", "superscript"]
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/

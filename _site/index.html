@@ -146,30 +146,30 @@
   <div class="entry-content">
     <p>Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:</p>
 
-<p><img src="http://harleykwyn.com/images/StandardJekyll.png" alt="Out of box Jekyll" /></p>
+<p><img src="http://harleykwyn.com/images/StandardJekyll.png" alt="Out of box Jekyll"></p>
 
-<h3 id="how-can-we-fix-that">How can we fix that?</h3>
+<h3>How can we fix that?</h3>
 
-<p>Well for ~~lazy~~ clever people like you and me we have our google fu to find themes like <a href="http://jekyllthemes.org/">these</a>. There are many more though so make sure to go explore! Don’t want all of our blogs to look the same after all.</p>
+<p>Well for <del>lazy</del> clever people like you and me we have our google fu to find themes like <a href="http://jekyllthemes.org/">these</a>. There are many more though so make sure to go explore! Don&#39;t want all of our blogs to look the same after all.</p>
 
-<p>If we’re starting from scratch we can just fork the repo from the source and then rename the repo to the standard <em>username</em>.github.io</p>
+<p>If we&#39;re starting from scratch we can just fork the repo from the source and then rename the repo to the standard <em>username</em>.github.io</p>
 
-<p>Let’s say we want to use <a href="http://jekyllthemes.org/themes/herringcove-theme/">this</a> theme. </p>
+<p>Let&#39;s say we want to use <a href="http://jekyllthemes.org/themes/herringcove-theme/">this</a> theme. </p>
 
-<p>You’ll got to the “Home Page” and fork the repo</p>
+<p>You&#39;ll got to the &quot;Home Page&quot; and fork the repo</p>
 
-<p>Now rename the repo to your <em>username</em>.github.io . To do this just got to the repo settings and replace “herring-cove” with “<em>username</em>.github.io”</p>
+<p>Now rename the repo to your <em>username</em>.github.io . To do this just got to the repo settings and replace &quot;herring-cove&quot; with &quot;<em>username</em>.github.io&quot;</p>
 
 <div class="highlight"><pre><code class="bash">  ~ <span class="nv">$ </span>git clone username.github.io
   ~ <span class="nv">$ </span><span class="nb">cd </span>username.github.io
   ~/username.github.io
 </code></pre></div>
 
-<p>Now open up this file and clear out anything you don’t want. Be sure to also recreate your CNAME file if you’re using a custom URL. This is covered in my previous post in step three. </p>
+<p>Now open up this file and clear out anything you don&#39;t want. Be sure to also recreate your <code>CNAME</code> file if you&#39;re using a custom URL. This is covered in my previous post in step three. </p>
 
-<p>Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an <em>drafts folder int he root of your _username</em>.github.io repo.</p>
+<p>Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an <code>_.drafts</code> folder int he root of your <em>username</em>.github.io repo.</p>
 
-<p>Some important things to note are editing your _config.yml file so that the url is pointing at your github.io page or custom url.</p>
+<p>Some important things to note are editing your <code>_config.yml</code> file so that the url is pointing at your github.io page or custom url.</p>
 
 <div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span>            <span class="l-Scalar-Plain">Harley Kwyn Hacking</span>
 <span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">Hacking ALL the things</span> 
@@ -194,11 +194,11 @@ Another helpful thing to know is that you can test if your edits will build usin
 <div class="highlight"><pre><code class="bash">~/username.github.io jekyll serve
 </code></pre></div>
 
-<p>Then point your browser at localhost:4000 and you can tinker with it. More on different Jekyll server modes can be found in the <a href="http://jekyllrb.com/docs/usage/">Jekyll documentation</a></p>
+<p>Then point your browser at <code>localhost:4000</code> and you can tinker with it. More on different Jekyll server modes can be found in the <a href="http://jekyllrb.com/docs/usage/">Jekyll documentation</a></p>
 
 <p>Alright! go have fun and build some slick looking sites.</p>
 
-<h3 id="references">References</h3>
+<h3>References</h3>
 
 <p><a href="http://jekyllthemes.org/themes/herringcove-theme/">Jekyll themes</a></p>
 
@@ -215,34 +215,34 @@ Another helpful thing to know is that you can test if your edits will build usin
     
   </header>
   <div class="entry-content">
-    <p>Github pages are awesome, and with jekyll and cool themes–like the one I’m using right now–you can make a rather polished looking blog in no time. Problem is… that ugly URL up there. <em>username</em>.github.io. Wait this is my page! Not github’s…</p>
+    <p>Github pages are awesome, and with jekyll and cool themes--like the one I&#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. <em>username</em>.github.io. Wait this is my page! Not github&#39;s...</p>
 
-<h3 id="how-can-we-fix-that">How can we fix that?</h3>
+<h3>How can we fix that?</h3>
 
 <ol>
-  <li>Acquire a domain name
-    <ul>
-      <li>I used <a href="http://www.godaddy.com/">GoDaddy.com</a> but there are many <a href="http://lifehacker.com/5683682/five-best-domain-name-registrars">other sites</a>. I’ve heard of some people using NameCheap which may be a better deal now than GoDaddy</li>
-    </ul>
-  </li>
-  <li>Configure DNS at GoDaddy.com
-    <ol>
-      <li>When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.</li>
-      <li>Click Edit and add two “A (host)”” to point to 192.30.252.153 and 192.30.252.154 like the following image <img src="http://harleykwyn.com/images/GoDaddyZoneFile1.png" alt="GoDaddyZoneFile1" /></li>
-      <li>set the www alias to point to your <em>username</em>.github.io like the following image <img src="http://harleykwyn.com/images/GoDaddyZoneFile2.png" alt="GoDaddyZoneFile2" /></li>
-    </ol>
-  </li>
-  <li>Create a CNAME file in your <em>username</em>.github.io repo
-CNAME file should point to your domain name this is easily done in the root of your directory with something like </li>
+<li>Acquire a domain name
+
+<ul>
+<li>I used <a href="http://www.godaddy.com/">GoDaddy.com</a> but there are many <a href="http://lifehacker.com/5683682/five-best-domain-name-registrars">other sites</a>. I&#39;ve heard of some people using NameCheap which may be a better deal now than GoDaddy</li>
+</ul></li>
+<li><p>Configure DNS at GoDaddy.com</p>
+
+<ol>
+<li>When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.</li>
+<li>Click Edit and add two &quot;A (host)&quot;&quot; to point to 192.30.252.153 and 192.30.252.154 like the following image <img src="http://harleykwyn.com/images/GoDaddyZoneFile1.png" alt="GoDaddyZoneFile1"></li>
+<li>set the www alias to point to your <em>username</em>.github.io like the following image <img src="http://harleykwyn.com/images/GoDaddyZoneFile2.png" alt="GoDaddyZoneFile2"></li>
+</ol></li>
+<li><p>Create a CNAME file in your <em>username</em>.github.io repo
+CNAME file should point to your domain name this is easily done in the root of your directory with something like </p></li>
 </ol>
 
 <div class="highlight"><pre><code class="bash"> KwynsMacPro: HarleyKwyn.github.io kwyn<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;harleykwyn.com&quot;</span> &gt; CNAME
    
 </code></pre></div>
 
-<p>Then just push your changes and you’re done and on your way! Happy blogging. :)</p>
+<p>Then just push your changes and you&#39;re done and on your way! Happy blogging. :)</p>
 
-<h3 id="references">References</h3>
+<h3>References</h3>
 
 <p><a href="http://pages.github.com/">Github Pages Documentation</a></p>
 
@@ -259,38 +259,38 @@ CNAME file should point to your domain name this is easily done in the root of y
     
   </header>
   <div class="entry-content">
-    <h2 id="background">Background</h2>
+    <h2>Background</h2>
 
-<p>There’s been quite some discussion about recursion and iteration in our classes at Hack Reactor when dealing with toy problems.</p>
+<p>There&#39;s been quite some discussion about recursion and iteration in our classes at Hack Reactor when dealing with toy problems.</p>
 
 <p>One of the toy problems we approached was a simple tree map function and we were wondering what would be effectively faster in implementation.</p>
 
-<p>For those of you who don’t know what a tree map function is it is an algorithm that takes in a <a href="http://en.wikipedia.org/wiki/Tree_%28data_structure%29">tree data structure</a> and <a href="http://en.wikipedia.org/wiki/Map_%28higher-order_function%29">maps</a> a function to each value in that tree and returns a tree containing the new values but in the same structure as before.</p>
+<p>For those of you who don&#39;t know what a tree map function is it is an algorithm that takes in a <a href="http://en.wikipedia.org/wiki/Tree_%28data_structure%29">tree data structure</a> and <a href="http://en.wikipedia.org/wiki/Map_%28higher-order_function%29">maps</a> a function to each value in that tree and returns a tree containing the new values but in the same structure as before.</p>
 
-<p>To test this I’m going to implement three different methods.</p>
-
-<ol>
-  <li><a href="http://en.wikipedia.org/wiki/Recursion">Recursion</a> with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">closure variable</a> to keep track of answers </li>
-  <li><a href="http://en.wikipedia.org/wiki/Recursion#Functional_recursion">Functional recursion</a> which passes in all variables with each recursive call.</li>
-  <li>Iteration which uses a while loop to iterate over all of the trees using a stack to manipulate data for <a href="http://en.wikipedia.org/wiki/Tree_traversal#Depth-first">depth-first traversal</a></li>
-</ol>
-
-<p>To understand the conceptual difference of all of these I’m going to draw you a scenario. Imagine a teacher wants to record all of the names of the students in the class. The teacher could go about this in many ways. Imagine that you have to iterate over all students. You could imagine the following:</p>
+<p>To test this I&#39;m going to implement three different methods.</p>
 
 <ol>
-  <li>Recursion with a closure : 
- Someone standing with a notepad writing the answer of each individual down and handing it to the teacher</li>
-  <li>Functional recursion: 
- Every student in the chain writing their answer down on a note pad and passing it to the next student and eventually passing it all the way back to the teacher</li>
-  <li>Iteration: 
- Teacher going to each student and telling them to write their answer down on a note pad the teacher is holding.</li>
+<li><a href="http://en.wikipedia.org/wiki/Recursion">Recursion</a> with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">closure variable</a> to keep track of answers </li>
+<li><a href="http://en.wikipedia.org/wiki/Recursion#Functional_recursion">Functional recursion</a> which passes in all variables with each recursive call.</li>
+<li>Iteration which uses a while loop to iterate over all of the trees using a stack to manipulate data for <a href="http://en.wikipedia.org/wiki/Tree_traversal#Depth-first">depth-first traversal</a></li>
 </ol>
 
-<h2 id="implementations">Implementations</h2>
+<p>To understand the conceptual difference of all of these I&#39;m going to draw you a scenario. Imagine a teacher wants to record all of the names of the students in the class. The teacher could go about this in many ways. Imagine that you have to iterate over all students. You could imagine the following:</p>
 
-<p>Ideally all of the following implementations should be executed in O(n) time. This is mainly to test V8’s (chrome’s javascript engine) handling of recursion, closure scopes, and iterations. </p>
+<ol>
+<li>Recursion with a closure : 
+Someone standing with a notepad writing the answer of each individual down and handing it to the teacher</li>
+<li>Functional recursion: 
+Every student in the chain writing their answer down on a note pad and passing it to the next student and eventually passing it all the way back to the teacher</li>
+<li>Iteration: 
+Teacher going to each student and telling them to write their answer down on a note pad the teacher is holding.</li>
+</ol>
 
-<h3 id="functional-recursion">Functional Recursion</h3>
+<h2>Implementations</h2>
+
+<p>Ideally all of the following implementations should be executed in O(n) time. This is mainly to test V8&#39;s (chrome&#39;s javascript engine) handling of recursion, closure scopes, and iterations. </p>
+
+<h3>Functional Recursion</h3>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
   <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span> 
@@ -301,7 +301,7 @@ CNAME file should point to your domain name this is easily done in the root of y
 <span class="p">};</span>
 </code></pre></div>
 
-<h3 id="closure-recursion">Closure Recursion</h3>
+<h3>Closure Recursion</h3>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">closureMap</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
   <span class="kd">var</span> <span class="nx">buildNode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">node</span><span class="p">,</span> <span class="nx">newNode</span><span class="p">){</span>
@@ -316,7 +316,7 @@ CNAME file should point to your domain name this is easily done in the root of y
 <span class="p">};</span>
 </code></pre></div>
 
-<h3 id="iterative">Iterative</h3>
+<h3>Iterative</h3>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">iterativeMap</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span>
@@ -335,7 +335,7 @@ CNAME file should point to your domain name this is easily done in the root of y
 <span class="p">};</span>
 </code></pre></div>
 
-<h2 id="perfjs-test-results">PerfJS test results</h2>
+<h2>PerfJS test results</h2>
 
 <p>On my computer the results of the <a href="http://jsperf.com/tree-map-kwyn">perfJS spec</a> I created show that the recursive solution is the most optimal with closure recursion coming in a close second at 16% less operations per second, and then the slowest being iterative without 18% less operations per second. This may be due to the fact that the recursion implementation has less variable declarations and calls to pop and push functions which can be quite expensive on their own. I encourage you to run <a href="http://jsperf.com/tree-map-kwyn">my perfJS</a> on your own computer and in different browsers and report back to me what you find!</p>
 
@@ -352,19 +352,19 @@ CNAME file should point to your domain name this is easily done in the root of y
     
   </header>
   <div class="entry-content">
-    <p>I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I’m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.</p>
+    <p>I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I&#39;m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.</p>
 
 <p>The way to deal with this is to make sure that whoever is typing, is following the verbal logic that the other pair is dictating. Never should one person be typing out code silently without input of the other pair. If you find your self sitting in silence and your pair is typing away without a word you should stop your pair and ask to drive for a moment and do the typing while they explain their logic to you.</p>
 
-<p>Even when this balance between “driving” and “navigating” is achieved there’s a key question that I ask myself.</p>
+<p>Even when this balance between &quot;driving&quot; and &quot;navigating&quot; is achieved there&#39;s a key question that I ask myself.</p>
 
-<p>Can I complete this prompt on my own, from scratch. If the answer in my head is yes, I attempt to go do it on my own and if I fail then I seek out help. This is not ideal though if you can’t implement the same code that you just wrote with your pair by yourself, ideally you will follow the driving and navigating paradigm as best as possible..</p>
+<p>Can I complete this prompt on my own, from scratch. If the answer in my head is yes, I attempt to go do it on my own and if I fail then I seek out help. This is not ideal though if you can&#39;t implement the same code that you just wrote with your pair by yourself, ideally you will follow the driving and navigating paradigm as best as possible..</p>
 
-<p>This paradigm allows for a few things to happen. The driver acts as an interpreter for the navigator. If the navigator’s logic is not sound the driver acts as a check against any faults in the logic. It also, in turn, allows the driver to experience the implementation of logic that may not be entirely aligned with their own.</p>
+<p>This paradigm allows for a few things to happen. The driver acts as an interpreter for the navigator. If the navigator&#39;s logic is not sound the driver acts as a check against any faults in the logic. It also, in turn, allows the driver to experience the implementation of logic that may not be entirely aligned with their own.</p>
 
 <p>So if you find yourself not driving, and instead navigating and coming up with logic, you should not feel like an impostor. You are the one coming up with the logic that makes the code work in the desired fashion and if you are driving, then you are also demonstrating the skills to interpret sound logic into code.</p>
 
-<p>Just remember, the majority of coders throughout their life will feel like they are in impostor. You’re not alone. Keep calm and code on.</p>
+<p>Just remember, the majority of coders throughout their life will feel like they are in impostor. You&#39;re not alone. Keep calm and code on.</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->

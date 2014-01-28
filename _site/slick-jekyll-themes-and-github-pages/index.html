@@ -142,30 +142,30 @@
     <div class="entry-content">
       <p>Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:</p>
 
-<p><img src="http://harleykwyn.com/images/StandardJekyll.png" alt="Out of box Jekyll" /></p>
+<p><img src="http://harleykwyn.com/images/StandardJekyll.png" alt="Out of box Jekyll"></p>
 
-<h3 id="how-can-we-fix-that">How can we fix that?</h3>
+<h3>How can we fix that?</h3>
 
-<p>Well for ~~lazy~~ clever people like you and me we have our google fu to find themes like <a href="http://jekyllthemes.org/">these</a>. There are many more though so make sure to go explore! Don’t want all of our blogs to look the same after all.</p>
+<p>Well for <del>lazy</del> clever people like you and me we have our google fu to find themes like <a href="http://jekyllthemes.org/">these</a>. There are many more though so make sure to go explore! Don&#39;t want all of our blogs to look the same after all.</p>
 
-<p>If we’re starting from scratch we can just fork the repo from the source and then rename the repo to the standard <em>username</em>.github.io</p>
+<p>If we&#39;re starting from scratch we can just fork the repo from the source and then rename the repo to the standard <em>username</em>.github.io</p>
 
-<p>Let’s say we want to use <a href="http://jekyllthemes.org/themes/herringcove-theme/">this</a> theme. </p>
+<p>Let&#39;s say we want to use <a href="http://jekyllthemes.org/themes/herringcove-theme/">this</a> theme. </p>
 
-<p>You’ll got to the “Home Page” and fork the repo</p>
+<p>You&#39;ll got to the &quot;Home Page&quot; and fork the repo</p>
 
-<p>Now rename the repo to your <em>username</em>.github.io . To do this just got to the repo settings and replace “herring-cove” with “<em>username</em>.github.io”</p>
+<p>Now rename the repo to your <em>username</em>.github.io . To do this just got to the repo settings and replace &quot;herring-cove&quot; with &quot;<em>username</em>.github.io&quot;</p>
 
 <div class="highlight"><pre><code class="bash">  ~ <span class="nv">$ </span>git clone username.github.io
   ~ <span class="nv">$ </span><span class="nb">cd </span>username.github.io
   ~/username.github.io
 </code></pre></div>
 
-<p>Now open up this file and clear out anything you don’t want. Be sure to also recreate your CNAME file if you’re using a custom URL. This is covered in my previous post in step three. </p>
+<p>Now open up this file and clear out anything you don&#39;t want. Be sure to also recreate your <code>CNAME</code> file if you&#39;re using a custom URL. This is covered in my previous post in step three. </p>
 
-<p>Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an <em>drafts folder int he root of your _username</em>.github.io repo.</p>
+<p>Important things to change are removing any default most. I suggest moving them somewhere else to save as templates for later. Possibly in an <code>_.drafts</code> folder int he root of your <em>username</em>.github.io repo.</p>
 
-<p>Some important things to note are editing your _config.yml file so that the url is pointing at your github.io page or custom url.</p>
+<p>Some important things to note are editing your <code>_config.yml</code> file so that the url is pointing at your github.io page or custom url.</p>
 
 <div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span>            <span class="l-Scalar-Plain">Harley Kwyn Hacking</span>
 <span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">Hacking ALL the things</span> 
@@ -190,11 +190,11 @@ Another helpful thing to know is that you can test if your edits will build usin
 <div class="highlight"><pre><code class="bash">~/username.github.io jekyll serve
 </code></pre></div>
 
-<p>Then point your browser at localhost:4000 and you can tinker with it. More on different Jekyll server modes can be found in the <a href="http://jekyllrb.com/docs/usage/">Jekyll documentation</a></p>
+<p>Then point your browser at <code>localhost:4000</code> and you can tinker with it. More on different Jekyll server modes can be found in the <a href="http://jekyllrb.com/docs/usage/">Jekyll documentation</a></p>
 
 <p>Alright! go have fun and build some slick looking sites.</p>
 
-<h3 id="references">References</h3>
+<h3>References</h3>
 
 <p><a href="http://jekyllthemes.org/themes/herringcove-theme/">Jekyll themes</a></p>
 
