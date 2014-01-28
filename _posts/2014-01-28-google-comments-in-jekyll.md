@@ -43,15 +43,19 @@ So for this script to work, Google needs to be sure you're associated with this 
 This can be done by navigating to your Google+ profile.
 
 At the top right of the page you'll see your face! (or a defautl icon) click on that and then click on `Account`
+
 ![Google+ Account]({{ site.url }}/images/GooglePlusAccount.png)
 
 Then on the left you'll click `Edit Profile`
+
 ![Google+ Edit Profile]({{ site.url }}/images/GooglePlusEdit.png)
 
 Now scroll all the way down to the links section and click edit
+
 ![Google+ Links]({{ site.url }}/images/GooglePlusLinks.png)
 
 Then scroll down to to `Contributor to` section and `add a custom link` that points to your main domain name or _username_.github.io
+
 ![Google+ Links add URL]({{ site.url }}/images/GooglePlusURL.png)
 
 Great now you're the author of your blog. Not that you weren't before, but now you're ordained by the all might Google.
