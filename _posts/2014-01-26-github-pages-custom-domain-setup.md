@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Custome domains and github pages
+title: Custom domains and github pages
 description: "How to setup your custom domain with your github.io page you've worked so hard on."
 modified: 2014-01-26
 tags: [github.io, github, Github Pages, tutorials]
