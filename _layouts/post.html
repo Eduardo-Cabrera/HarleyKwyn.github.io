@@ -49,9 +49,7 @@
           <!-- google comment attempted to be added here attempt -->
         </div><!-- /.social-share -->{% endif %}
       </footer>
-
-    </div><!-- /.entry-content -->
-    <div id="comments"></div>
+      <div id="comments" position="float left"></div>
       <script>
       gapi.comments.render('comments', {
           href: window.location,
@@ -60,6 +58,8 @@
           view_type: 'FILTERED_POSTMOD'
       });
       </script>
+    </div><!-- /.entry-content -->
+   
     {% if site.related_posts.size %}
     <div class="read-more">
       {% for post in site.related_posts limit:1 %}
