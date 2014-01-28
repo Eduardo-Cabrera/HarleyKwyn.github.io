@@ -51,9 +51,10 @@
       </footer>
       <div id="comments"></div>
       <script>
+      var width = $("footer").width() - 20;
       gapi.comments.render('comments', {
           href: window.location,
-          width: $("footer").width() - 20,
+          width: width,
           first_party_property: 'BLOGGER',
           view_type: 'FILTERED_POSTMOD'
       });
