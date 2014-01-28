@@ -111,6 +111,9 @@
 		<li>
 			<a href="#">Posts</a>
 			<ul class="dl-submenu">
+				<li><a href="http://harleykwyn.com/tags/#JavaScript">JavaScript</a></li>
+				<li><a a href="http://harleykwyn.com/tags/#algorithms">Algorithms</a></li>
+				<li><a href="http://harleykwyn.com/tags/#GitHub">GitHub</a></li>
 				<li><a href="http://harleykwyn.com/archive/">All Posts</a></li>
 				<li><a href="http://harleykwyn.com/tags/">All Tags</a></li>
 			</ul>
@@ -136,6 +139,79 @@
 
 <div id="main" role="main">
   
+<article class="hentry">
+  <header>
+    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-28T00:00:00+00:00"><a href="http://harleykwyn.com/google-comments-in-jekyll/">January 28, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://harleykwyn.com/google-comments-in-jekyll/" rel="bookmark" title="Google Comments in Jekyll" itemprop="url">Google Comments in Jekyll</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>Last post in this unofficial blog posts about blogging series. </p>
+
+<p>Without a discussion about what you&#39;re posting your blog isn&#39;t very valueble. Disque can be easy to use but if you&#39;re like me you beleive in google+ and would love to have that as the commenting platform for your blog.</p>
+
+<p>Let&#39;s jump into how to get this installed.</p>
+
+<h1>Installation</h1>
+
+<p>Be sure that you have jQuery included in the scripts at the beginning of your post layout. </p>
+
+<p>typically found under your <code>_includes</code> file <code>scripts.html</code> and should look kind of like this:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+
+<p>Find where you want your comments to appear in your site&#39;s HTML. Preferablly the comments will be post specific so it&#39;s mostl likely to be found in <code>_layout</code> in something that look like <code>post.html</code> and in a wrapper, quite possibly a <code>&lt;footer&gt;&lt;/footer&gt;</code> tab</p>
+
+<p>Copy this div into that container</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;commentscounter&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+  <span class="nx">gapi</span><span class="p">.</span><span class="nx">commentcount</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;commentscounter&#39;</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">href</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+
+<h1>Setting up Google Authorship</h1>
+
+<p>So for this script to work, Google needs to be sure you&#39;re associated with this page. To do this we need to setup Google Authorship.</p>
+
+<p>This can be done by navigating to your Google+ profile.</p>
+
+<p>At the top right of the page you&#39;ll see your face! (or a defautl icon) click on that and then click on <code>Account</code>
+<img src="http://harleykwyn.com/images/GooglePlusAccount.png" alt="Google+ Account"></p>
+
+<p>Then on the left you&#39;ll click <code>Edit Profile</code>
+<img src="http://harleykwyn.com/images/GooglePlusEdit.png" alt="Google+ Edit Profile"></p>
+
+<p>Now scroll all the way down to the links section and click edit
+<img src="http://harleykwyn.com/images/GooglePlusLinks.png" alt="Google+ Links"></p>
+
+<p>Then scroll down to to <code>Contributor to</code> section and <code>add a custom link</code> that points to your main domain name or <em>username</em>.github.io
+<img src="http://harleykwyn.com/images/GooglePlusURL.png" alt="Google+ Links add URL"></p>
+
+<p>Great now you&#39;re the author of your blog. Not that you weren&#39;t before, but now you&#39;re ordained by the all might Google.</p>
+
+<h1>Linking your Google account to your page</h1>
+
+<p>So one last step add a link to your Google+ profile to your page. Using the following code. the <code>href</code> should be your profile URL + <code>?rel=author</code> otherwise Google will not <em>relate</em> your authorship to the page.</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://plus.google.com/+YourProfileName?</span>
+<span class="s">   rel=author&quot;</span><span class="nt">&gt;</span>Google<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+
+<p>You&#39;ll notice my name in the footer next to the copy write symbol, I went ahead and sneakily put it there in the <code>footer.html</code> template. Like so:</p>
+
+<div class="highlight"><pre><code class="html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://plus.google.com/+KwynMeagher?rel=author&quot;</span><span class="nt">&gt;</span> Kwyn Alice Meagher <span class="nt">&lt;/a&gt;</span>.
+</code></pre></div>
+
+<p>Now get commenting!</p>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
 <article class="hentry">
   <header>
     <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-26T00:00:00+00:00"><a href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/">January 26, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
@@ -182,7 +258,7 @@ Another helpful thing to know is that you can test if your edits will build usin
 <div class="highlight"><pre><code class="bash">~/username.github.io jekyll build
 </code></pre></div>
 
-<p>And then you check how it looks on the localhost: 4000 post if you change the url to look like this:</p>
+<p>And then you check how it looks on the <code>localhost:4000</code> post if you change the url to look like this:</p>
 
 <div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span>            <span class="l-Scalar-Plain">Harley Kwyn Hacking</span>
 <span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span>      <span class="l-Scalar-Plain">Hacking ALL the things</span> 

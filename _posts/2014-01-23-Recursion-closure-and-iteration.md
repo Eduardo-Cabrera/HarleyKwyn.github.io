@@ -3,7 +3,7 @@ layout: post
 title: Recursion, Closure, and Iteration
 description: "To understand recursion you must first understand recursion"
 modified: 2014-01-26
-tags: [recursion, mapping function, optimization, perfJS, JavaScript]
+tags: [recursion, algorithms, optimization, perfJS, JavaScript]
 image:
   feature: the-golden-ratio.jpg
 comments: true
