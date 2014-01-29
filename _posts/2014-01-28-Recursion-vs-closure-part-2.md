@@ -42,7 +42,7 @@ var phoneDigitsToLetters = {
 
 ###Functional Recursion
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 var telephoneWordsFunctional = function(digitString, word, possibleWords) {
   possibleWords = possibleWords || [];
   if(digitString.length === 0){
@@ -65,7 +65,7 @@ The key difference here is the subroutine we're wrapping into line 3. This place
 
 This allows the v8 javascript engine to clean up the function calls after they're finished instead of leaving them open. Scopes in Javascript will not close until they are no longer referenced and if we have to contiually pass all of our arguments along, v8 will have to keep all of those instances open. [This](https://medium.com/p/8eee8afb41df) blog post explains this well and how to address this if you want to continue to use functional programming.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 var telephoneWordsClosure = function(digitString){
   var possibleWords = [];
   var subroutine = function(digitString, word, index){
@@ -84,7 +84,6 @@ var telephoneWordsClosure = function(digitString){
   return possibleWords;
 };
 {% endhighlight %}
-
 
 ##PerfJS test results
 
