@@ -87,9 +87,9 @@ var telephoneWordsClosure = function(digitString){
 
 ##PerfJS test results
 
-![jsPerf Table]({{ this.site }}/image/jsPerfTable.png)
+![jsPerf Table]({{ this.site }}/images/jsPerfTable.png)
 
-![jsPerf Bar Chart]({{ this.site }}/image/jsPerfBarChart.png)
+![jsPerf Bar Chart]({{ this.site }}/images/jsPerfBarChart.png)
 
 On my computer using chrome the results of the [perfJS spec](http://jsperf.com/permute-telephone-letters) I created show that once again the recursive solution is the most optimal. Closure recursion is approximately as the same difference as last time. 
 
