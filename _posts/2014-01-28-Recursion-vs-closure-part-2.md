@@ -2,7 +2,7 @@
 layout: post
 title: Recursion: Functional vs Closure Part II
 description: "To understand recursion you must first understand recursion"
-modified: 2014-01-26
+modified: 2014-01-28
 tags: [recursion, algorithms, optimization, perfJS, JavaScript]
 image:
   feature: the-golden-ratio.jpg
