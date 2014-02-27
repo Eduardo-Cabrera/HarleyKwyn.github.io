@@ -11,9 +11,9 @@ owner:
   bio:            "Aka Harley Kwyn. Hack Reactor Student, biohacker, hacker in general"
   email:          kwyn.meagher@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        https://twitter.com/HarleyKwyn
+  twitter:        HarleyKwyn
   facebook:       
-  github:         https://github.com/harleykwyn
+  github:         harleykwyn
   stackexchange:  
   linkedin:       http://www.linkedin.com/pub/kwyn-meagher/1a/a70/46b
   instagram:      
@@ -46,7 +46,7 @@ future:      true
 pygments:    true
 markdown:    redcarpet
 redcarpet:
-  extensions: ["strikethrough", "superscript"]
+  extensions: [ "tables", "strikethrough", "superscript", "with_toc_data"]
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
