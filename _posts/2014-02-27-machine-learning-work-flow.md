@@ -55,7 +55,7 @@ To apply the algorithm you must also extract features from the test data that yo
 
 Evaluate the difference in the accuracy of your algorithm and iterate over the previous steps tweaking the parameters of the algorithm as well as changing the combination of features or extracting new features from your data. Try to be intelligent and figure out intuitively what features should correlate highly with the specific labels you are interested in. 
 
-##Take Away
+#Take Away
 
 So in short what you need to worry about:
 
