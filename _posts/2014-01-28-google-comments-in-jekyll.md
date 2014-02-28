@@ -24,7 +24,7 @@ typically found under your `_includes` file `scripts.html` and should look kind 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 {% endhighlight %}
 
-Find where you want your comments to appear in your site's HTML. Preferablly the comments will be post specific so it's mostl likely to be found in `_layout` in something that look like `post.html` and in a wrapper, quite possibly a `<footer></footer>` tab
+Find where you want your comments to appear in your site's HTML. Preferably the comments will be post specific so it's most likely to be found in `_layout` in something that look like `post.html` and in a wrapper, quite possibly a `<footer></footer>` tab
 
 Copy this div into that container
 {% highlight HTML %}
@@ -45,7 +45,7 @@ So for this script to work, Google needs to be sure you're associated with this 
 
 This can be done by navigating to your Google+ profile.
 
-At the top right of the page you'll see your face! (or a defautl icon) click on that and then click on `Account`
+At the top right of the page you'll see your face! (or a default icon) click on that and then click on `Account`
 
 ![Google+ Account]({{ site.url }}/images/GooglePlusAccount.png)
 

@@ -145,7 +145,7 @@
     <div class="entry-content">
       <p>Github pages are awesome, and with jekyll and cool themes--like the one I&#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. <em>username</em>.github.io. Wait this is my page! Not github&#39;s...</p>
 
-<h3>How can we fix that?</h3>
+<h3 id="toc_0">How can we fix that?</h3>
 
 <ol>
 <li>Acquire a domain name
@@ -170,7 +170,7 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 <p>Then just push your changes and you&#39;re done and on your way! Happy blogging. :)</p>
 
-<h3>References</h3>
+<h3 id="toc_1">References</h3>
 
 <p><a href="http://pages.github.com/">Github Pages Documentation</a></p>
 
@@ -188,40 +188,32 @@ CNAME file should point to your domain name this is easily done in the root of y
             <li class="googleplus"><a href="https://plus.google.com/share?url=http://harleykwyn.com/github-pages-custom-domain-setup/" title="Share on Google Plus"><span class="count"><i class="icon-google-plus-sign"></i> +1</span></a></li>
           </ul>
           <!-- google comment attempted to be added here attempt -->
-          <div id="comments"></div>
-          <script>
-                gapi.comments.render('comments', {
-                href: window.location,
-                width: '624',
-                first_party_property: 'BLOGGER',
-                view_type: 'FILTERED_POSTMOD'
-            });
-          </script>
         </div><!-- /.social-share -->
-
       </footer>
+      <div id="comments"></div>
     </div><!-- /.entry-content -->
+   
     
     <div class="read-more">
       
         <div class="read-more-header">
-          <a href="http://harleykwyn.com/Recursion-closure-and-iteration/" class="read-more-btn">Read More</a>
+          <a href="http://harleykwyn.com/recursion-closure-and-iteration/" class="read-more-btn">Read More</a>
         </div><!-- /.read-more-header -->
         <div class="read-more-content">
-          <h3><a href="http://harleykwyn.com/google-comments-in-jekyll/" title="Google Comments in Jekyll">Google Comments in Jekyll</a></h3>
-          <p>Start a discussion using google comments. <a href="http://harleykwyn.com/google-comments-in-jekyll/">Continue reading</a></p>
+          <h3><a href="http://harleykwyn.com/depth-first-breadth-first/" title="Depth First vs Breadth First">Depth First vs Breadth First</a></h3>
+          <p>Binding <a href="http://harleykwyn.com/depth-first-breadth-first/">Continue reading</a></p>
         </div><!-- /.read-more-content -->
       
       <div class="read-more-list">
         
           <div class="list-item">
-            <h4><a href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" title="Slick jekyll themes + Github Pages">Slick jekyll themes + Github Pages</a></h4>
-            <span>Published on January 26, 2014</span>
+            <h4><a href="http://harleykwyn.com/recursion-vs-closure-part-2/" title="Recursion Functional vs Closure Part II">Recursion Functional vs Closure Part II</a></h4>
+            <span>Published on January 28, 2014</span>
           </div><!-- /.list-item -->
         
           <div class="list-item">
-            <h4><a href="http://harleykwyn.com/Recursion-closure-and-iteration/" title="Recursion, Closure, and Iteration">Recursion, Closure, and Iteration</a></h4>
-            <span>Published on January 23, 2014</span>
+            <h4><a href="http://harleykwyn.com/google-comments-in-jekyll/" title="Google Comments in Jekyll">Google Comments in Jekyll</a></h4>
+            <span>Published on January 28, 2014</span>
           </div><!-- /.list-item -->
         
       </div><!-- /.read-more-list -->
@@ -264,6 +256,14 @@ CNAME file should point to your domain name this is easily done in the root of y
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
  -->
 	        
-
+ <script>
+      var width = $(".entry-content").width() - 20;
+      gapi.comments.render('comments', {
+          href: window.location,
+          width: width,
+          first_party_property: 'BLOGGER',
+          view_type: 'FILTERED_POSTMOD'
+      });
+  </script>
 </body>
 </html>

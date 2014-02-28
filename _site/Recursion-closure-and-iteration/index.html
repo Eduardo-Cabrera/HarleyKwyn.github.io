@@ -22,14 +22,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Recursion, Closure, and Iteration">
 <meta property="og:description" content="To understand recursion you must first understand recursion">
-<meta property="og:url" content="http://harleykwyn.com/Recursion-closure-and-iteration/">
+<meta property="og:url" content="http://harleykwyn.com/recursion-closure-and-iteration/">
 <meta property="og:site_name" content="Harley Kwyn Hacking">
 
 
 
 
 
-<link rel="canonical" href="http://harleykwyn.com/Recursion-closure-and-iteration/">
+<link rel="canonical" href="http://harleykwyn.com/recursion-closure-and-iteration/">
 <link href="http://harleykwyn.com/feed.xml" type="application/atom+xml" rel="alternate" title="Harley Kwyn Hacking Feed">
 <link rel="author" href="https://plus.google.com/+KwynMeagher?rel=author">
 
@@ -137,13 +137,13 @@
     <header class="header-title">
       <div class="header-title-wrap">
         
-          <h1 class="entry-title"><a href="http://harleykwyn.com/Recursion-closure-and-iteration/" rel="bookmark" title="Recursion, Closure, and Iteration">Recursion, Closure, and Iteration</a></h1>
+          <h1 class="entry-title"><a href="http://harleykwyn.com/recursion-closure-and-iteration/" rel="bookmark" title="Recursion, Closure, and Iteration">Recursion, Closure, and Iteration</a></h1>
         
         <h2>January 23, 2014</h2>
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <h2>Background</h2>
+      <h2 id="toc_0">Background</h2>
 
 <p>There&#39;s been quite some discussion about recursion and iteration in our classes at Hack Reactor when dealing with toy problems.</p>
 
@@ -170,11 +170,11 @@ Every student in the chain writing their answer down on a note pad and passing i
 Teacher going to each student and telling them to write their answer down on a note pad the teacher is holding.</li>
 </ol>
 
-<h2>Implementations</h2>
+<h2 id="toc_1">Implementations</h2>
 
 <p>Ideally all of the following implementations should be executed in O(n) time. This is mainly to test V8&#39;s (chrome&#39;s javascript engine) handling of recursion, closure scopes, and iterations. </p>
 
-<h3>Functional Recursion</h3>
+<h3 id="toc_2">Functional Recursion</h3>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
   <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span> 
@@ -185,7 +185,7 @@ Teacher going to each student and telling them to write their answer down on a n
 <span class="p">};</span>
 </code></pre></div>
 
-<h3>Closure Recursion</h3>
+<h3 id="toc_3">Closure Recursion</h3>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">closureMap</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
   <span class="kd">var</span> <span class="nx">buildNode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">node</span><span class="p">,</span> <span class="nx">newNode</span><span class="p">){</span>
@@ -200,7 +200,7 @@ Teacher going to each student and telling them to write their answer down on a n
 <span class="p">};</span>
 </code></pre></div>
 
-<h3>Iterative</h3>
+<h3 id="toc_4">Iterative</h3>
 
 <div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">iterativeMap</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span>
@@ -219,7 +219,7 @@ Teacher going to each student and telling them to write their answer down on a n
 <span class="p">};</span>
 </code></pre></div>
 
-<h2>PerfJS test results</h2>
+<h2 id="toc_5">PerfJS test results</h2>
 
 <p>On my computer the results of the <a href="http://jsperf.com/tree-map-kwyn">perfJS spec</a> I created show that the recursive solution is the most optimal with closure recursion coming in a close second at 16% less operations per second, and then the slowest being iterative without 18% less operations per second. This may be due to the fact that the recursion implementation has less variable declarations and calls to pop and push functions which can be quite expensive on their own. I encourage you to run <a href="http://jsperf.com/tree-map-kwyn">my perfJS</a> on your own computer and in different browsers and report back to me what you find!</p>
 
@@ -227,29 +227,21 @@ Teacher going to each student and telling them to write their answer down on a n
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="http://harleykwyn.com/tags/#recursion" title="Pages tagged recursion" class="tag">recursion</a><a href="http://harleykwyn.com/tags/#algorithms" title="Pages tagged algorithms" class="tag">algorithms</a><a href="http://harleykwyn.com/tags/#optimization" title="Pages tagged optimization" class="tag">optimization</a><a href="http://harleykwyn.com/tags/#perfJS" title="Pages tagged perfJS" class="tag">perfJS</a><a href="http://harleykwyn.com/tags/#JavaScript" title="Pages tagged JavaScript" class="tag">JavaScript</a></span>
-        <span><a href="http://harleykwyn.com/Recursion-closure-and-iteration/" rel="bookmark" title="Recursion, Closure, and Iteration">Recursion, Closure, and Iteration</a> was published on <span class="entry-date date published updated"><time datetime="2014-01-23T00:00:00+00:00">January 23, 2014</time></span></span>
+        <span><a href="http://harleykwyn.com/recursion-closure-and-iteration/" rel="bookmark" title="Recursion, Closure, and Iteration">Recursion, Closure, and Iteration</a> was published on <span class="entry-date date published updated"><time datetime="2014-01-23T00:00:00+00:00">January 23, 2014</time></span></span>
         (revised: <span class="entry-date date modified"><time datetime="2014-01-26">01/26/2014</time></span>)
         <span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span>
         <div class="social-share">
           <ul class="socialcount socialcount-small inline-list">
-            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://harleykwyn.com/Recursion-closure-and-iteration/" title="Share on Facebook"><span class="count"><i class="icon-facebook-sign"></i> Like</span></a></li>
-            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://harleykwyn.com/Recursion-closure-and-iteration/" title="Share on Twitter"><span class="count"><i class="icon-twitter-sign"></i> Tweet</span></a></li>
-            <li class="googleplus"><a href="https://plus.google.com/share?url=http://harleykwyn.com/Recursion-closure-and-iteration/" title="Share on Google Plus"><span class="count"><i class="icon-google-plus-sign"></i> +1</span></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://harleykwyn.com/recursion-closure-and-iteration/" title="Share on Facebook"><span class="count"><i class="icon-facebook-sign"></i> Like</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://harleykwyn.com/recursion-closure-and-iteration/" title="Share on Twitter"><span class="count"><i class="icon-twitter-sign"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://harleykwyn.com/recursion-closure-and-iteration/" title="Share on Google Plus"><span class="count"><i class="icon-google-plus-sign"></i> +1</span></a></li>
           </ul>
           <!-- google comment attempted to be added here attempt -->
-          <div id="comments"></div>
-          <script>
-                gapi.comments.render('comments', {
-                href: window.location,
-                width: '624',
-                first_party_property: 'BLOGGER',
-                view_type: 'FILTERED_POSTMOD'
-            });
-          </script>
         </div><!-- /.social-share -->
-
       </footer>
+      <div id="comments"></div>
     </div><!-- /.entry-content -->
+   
     
     <div class="read-more">
       
@@ -257,20 +249,20 @@ Teacher going to each student and telling them to write their answer down on a n
           <a href="http://harleykwyn.com/impostor-syndrom/" class="read-more-btn">Read More</a>
         </div><!-- /.read-more-header -->
         <div class="read-more-content">
-          <h3><a href="http://harleykwyn.com/google-comments-in-jekyll/" title="Google Comments in Jekyll">Google Comments in Jekyll</a></h3>
-          <p>Start a discussion using google comments. <a href="http://harleykwyn.com/google-comments-in-jekyll/">Continue reading</a></p>
+          <h3><a href="http://harleykwyn.com/depth-first-breadth-first/" title="Depth First vs Breadth First">Depth First vs Breadth First</a></h3>
+          <p>Binding <a href="http://harleykwyn.com/depth-first-breadth-first/">Continue reading</a></p>
         </div><!-- /.read-more-content -->
       
       <div class="read-more-list">
         
           <div class="list-item">
-            <h4><a href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" title="Slick jekyll themes + Github Pages">Slick jekyll themes + Github Pages</a></h4>
-            <span>Published on January 26, 2014</span>
+            <h4><a href="http://harleykwyn.com/recursion-vs-closure-part-2/" title="Recursion Functional vs Closure Part II">Recursion Functional vs Closure Part II</a></h4>
+            <span>Published on January 28, 2014</span>
           </div><!-- /.list-item -->
         
           <div class="list-item">
-            <h4><a href="http://harleykwyn.com/github-pages-custom-domain-setup/" title="Custom domains and github pages">Custom domains and github pages</a></h4>
-            <span>Published on January 26, 2014</span>
+            <h4><a href="http://harleykwyn.com/google-comments-in-jekyll/" title="Google Comments in Jekyll">Google Comments in Jekyll</a></h4>
+            <span>Published on January 28, 2014</span>
           </div><!-- /.list-item -->
         
       </div><!-- /.read-more-list -->
@@ -313,6 +305,14 @@ Teacher going to each student and telling them to write their answer down on a n
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
  -->
 	        
-
+ <script>
+      var width = $(".entry-content").width() - 20;
+      gapi.comments.render('comments', {
+          href: window.location,
+          width: width,
+          first_party_property: 'BLOGGER',
+          view_type: 'FILTERED_POSTMOD'
+      });
+  </script>
 </body>
 </html>

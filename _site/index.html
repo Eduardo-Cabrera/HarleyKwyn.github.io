@@ -141,6 +141,122 @@
   
 <article class="hentry">
   <header>
+    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-29T00:00:00+00:00"><a href="http://harleykwyn.com/depth-first-breadth-first/">January 29, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://harleykwyn.com/depth-first-breadth-first/" rel="bookmark" title="Depth First vs Breadth First" itemprop="url">Depth First vs Breadth First</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>So currently there are these nice articles on wikipedia to help you with <a href="http://en.wikipedia.org/wiki/Breadth-first_search">breadth first search</a> and <a href="http://en.wikipedia.org/wiki/Depth-first_search">depth first search</a>.</p>
+
+<p>I&#39;m going to destill these out for you so you don&#39;t have to go through the pain of understanding the differences.</p>
+
+<p>Their images of how the traversial works are actually spot on. So We&#39;ll put that here.
+| <strong>Depth First</strong> | <strong>Breadth First</strong> |
+| --------------- | -----------------: |
+| <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Depth-first-tree.svg/500px-Depth-first-tree.svg.png">Depth First</a> | <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/500px-Breadth-first-tree.svg.png">Breadth First</a> |</p>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-28T00:00:00+00:00"><a href="http://harleykwyn.com/recursion-vs-closure-part-2/">January 28, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://harleykwyn.com/recursion-vs-closure-part-2/" rel="bookmark" title="Recursion Functional vs Closure Part II" itemprop="url">Recursion Functional vs Closure Part II</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h2 id="toc_0">Background</h2>
+
+<p>To continue our discussion from my <a href="http://harleykwyn.com/Recursion-closure-and-iteration/">previous post</a> I&#39;ve decided to run another head ot head test with a functional recursive implimentation and a closure scope recursive implimentation.</p>
+
+<p>A quick review of the differences between implimentations</p>
+
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Recursion">Recursion</a> with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">closure variable</a> to keep track of answers </li>
+<li><a href="http://en.wikipedia.org/wiki/Recursion#Functional_recursion">Functional recursion</a> which passes in all variables with each recursive call.</li>
+<li>Iteration which uses a while loop to iterate over all of the possibilities. We&#39;ll leave this one out of the fight for now.</li>
+</ol>
+
+<h2 id="toc_1">Implementations</h2>
+
+<p>Ideally both of the following implementations should be executed in 0(n) time. This is mainly to test V8&#39;s (chrome&#39;s javascript engine) handling of functional recursion and closure scope recursion. </p>
+
+<p>Each of these implmentations references a javascript object with keys for all of the numbers and their associated letters.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">phoneDigitsToLetters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="mi">0</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+  <span class="mi">1</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+  <span class="mi">2</span><span class="o">:</span> <span class="s1">&#39;ABC&#39;</span><span class="p">,</span>
+  <span class="mi">3</span><span class="o">:</span> <span class="s1">&#39;DEF&#39;</span><span class="p">,</span>
+  <span class="mi">4</span><span class="o">:</span> <span class="s1">&#39;GHI&#39;</span><span class="p">,</span>
+  <span class="mi">5</span><span class="o">:</span> <span class="s1">&#39;JKL&#39;</span><span class="p">,</span>
+  <span class="mi">6</span><span class="o">:</span> <span class="s1">&#39;MNO&#39;</span><span class="p">,</span>
+  <span class="mi">7</span><span class="o">:</span> <span class="s1">&#39;PQRS&#39;</span><span class="p">,</span>
+  <span class="mi">8</span><span class="o">:</span> <span class="s1">&#39;TUV&#39;</span><span class="p">,</span>
+  <span class="mi">9</span><span class="o">:</span> <span class="s1">&#39;WXYZ&#39;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="toc_2">Functional Recursion</h3>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">telephoneWordsFunctional</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">digitString</span><span class="p">,</span> <span class="nx">word</span><span class="p">,</span> <span class="nx">possibleWords</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">possibleWords</span> <span class="o">=</span> <span class="nx">possibleWords</span> <span class="o">||</span> <span class="p">[];</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">digitString</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="nx">possibleWords</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">word</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">word</span> <span class="o">=</span> <span class="nx">word</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">letters</span> <span class="o">=</span> <span class="nx">phoneDigitsToLetters</span><span class="p">[</span><span class="nx">digitString</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
+  <span class="nx">digitString</span> <span class="o">=</span> <span class="nx">digitString</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">++</span><span class="p">){</span>
+    <span class="nx">telephoneWordsFunctional</span><span class="p">(</span><span class="nx">digitString</span><span class="p">,</span> <span class="nx">word</span> <span class="o">+</span> <span class="nx">letters</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">possibleWords</span><span class="p">);</span>
+  <span class="p">}</span> 
+  <span class="k">return</span> <span class="nx">possibleWords</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="toc_3">Closure Recursion</h3>
+
+<p>The key difference here is the subroutine we&#39;re wrapping into line 3. This places the possibleWords array outside the scope of the subroutine function which behaves much like the functional recusrive implimentation above.</p>
+
+<p>This allows the v8 javascript engine to clean up the function calls after they&#39;re finished instead of leaving them open. Scopes in Javascript will not close until they are no longer referenced and if we have to contiually pass all of our arguments along, v8 will have to keep all of those instances open. <a href="https://medium.com/p/8eee8afb41df">This</a> blog post explains this well and how to address this if you want to continue to use functional programming.</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">telephoneWordsClosure</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">digitString</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">possibleWords</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">var</span> <span class="nx">subroutine</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">digitString</span><span class="p">,</span> <span class="nx">word</span><span class="p">,</span> <span class="nx">index</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="nx">digitString</span><span class="p">.</span><span class="nx">length</span><span class="p">){</span>
+      <span class="nx">possibleWords</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">word</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">newWord</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">letters</span> <span class="o">=</span> <span class="nx">phoneDigitsToLetters</span><span class="p">[</span><span class="nx">digitString</span><span class="p">[</span><span class="nx">index</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">letters</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">++</span><span class="p">){</span>
+      <span class="nx">newWord</span> <span class="o">=</span> <span class="nx">word</span> <span class="o">+</span> <span class="nx">letters</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">subroutine</span><span class="p">(</span><span class="nx">digitString</span><span class="p">,</span> <span class="nx">newWord</span><span class="p">,</span> <span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">);</span>
+    <span class="p">}</span> 
+  <span class="p">};</span>
+  <span class="nx">subroutine</span><span class="p">(</span><span class="nx">digitString</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">possibleWords</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h2 id="toc_4">PerfJS test results</h2>
+
+<p><img src="/images/jsPerfTable.png" alt="jsPerf Table"></p>
+
+<p><img src="/images/jsPerfBarChart.png" alt="jsPerf Bar Chart"></p>
+
+<p>On my computer using chrome the results of the <a href="http://jsperf.com/permute-telephone-letters">perfJS spec</a> I created show that once again the recursive solution is the most optimal. Closure recursion is approximately as the same difference as last time. </p>
+
+<p>I encourage you to run <a href="http://jsperf.com/tree-map-kwyn">my perfJS</a> on your own computer and in different browsers and report back to me what you find!</p>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
     <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-28T00:00:00+00:00"><a href="http://harleykwyn.com/google-comments-in-jekyll/">January 28, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
     
       <h1 class="entry-title"><a href="http://harleykwyn.com/google-comments-in-jekyll/" rel="bookmark" title="Google Comments in Jekyll" itemprop="url">Google Comments in Jekyll</a></h1>
@@ -153,7 +269,7 @@
 
 <p>Let&#39;s jump into how to get this installed.</p>
 
-<h1>Installation</h1>
+<h1 id="toc_0">Installation</h1>
 
 <p>Be sure that you have jQuery included in the scripts at the beginning of your post layout. </p>
 
@@ -166,35 +282,42 @@
 
 <p>Copy this div into that container</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;commentscounter&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-  <span class="nt">&lt;script&gt;</span>
-  <span class="nx">gapi</span><span class="p">.</span><span class="nx">commentcount</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;commentscounter&#39;</span><span class="p">,</span> <span class="p">{</span>
-      <span class="nx">href</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;comments&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">gapi</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">href</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">,</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;624&#39;</span><span class="p">,</span>
+      <span class="nx">first_party_property</span><span class="o">:</span> <span class="s1">&#39;BLOGGER&#39;</span><span class="p">,</span>
+      <span class="nx">view_type</span><span class="o">:</span> <span class="s1">&#39;FILTERED_POSTMOD&#39;</span>
   <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
 
-<h1>Setting up Google Authorship</h1>
+<h1 id="toc_1">Setting up Google Authorship</h1>
 
 <p>So for this script to work, Google needs to be sure you&#39;re associated with this page. To do this we need to setup Google Authorship.</p>
 
 <p>This can be done by navigating to your Google+ profile.</p>
 
-<p>At the top right of the page you&#39;ll see your face! (or a defautl icon) click on that and then click on <code>Account</code>
-<img src="http://harleykwyn.com/images/GooglePlusAccount.png" alt="Google+ Account"></p>
+<p>At the top right of the page you&#39;ll see your face! (or a defautl icon) click on that and then click on <code>Account</code></p>
 
-<p>Then on the left you&#39;ll click <code>Edit Profile</code>
-<img src="http://harleykwyn.com/images/GooglePlusEdit.png" alt="Google+ Edit Profile"></p>
+<p><img src="http://harleykwyn.com/images/GooglePlusAccount.png" alt="Google+ Account"></p>
 
-<p>Now scroll all the way down to the links section and click edit
-<img src="http://harleykwyn.com/images/GooglePlusLinks.png" alt="Google+ Links"></p>
+<p>Then on the left you&#39;ll click <code>Edit Profile</code></p>
 
-<p>Then scroll down to to <code>Contributor to</code> section and <code>add a custom link</code> that points to your main domain name or <em>username</em>.github.io
-<img src="http://harleykwyn.com/images/GooglePlusURL.png" alt="Google+ Links add URL"></p>
+<p><img src="http://harleykwyn.com/images/GooglePlusEdit.png" alt="Google+ Edit Profile"></p>
+
+<p>Now scroll all the way down to the links section and click edit</p>
+
+<p><img src="http://harleykwyn.com/images/GooglePlusLinks.png" alt="Google+ Links"></p>
+
+<p>Then scroll down to to <code>Contributor to</code> section and <code>add a custom link</code> that points to your main domain name or <em>username</em>.github.io</p>
+
+<p><img src="http://harleykwyn.com/images/GooglePlusURL.png" alt="Google+ Links add URL"></p>
 
 <p>Great now you&#39;re the author of your blog. Not that you weren&#39;t before, but now you&#39;re ordained by the all might Google.</p>
 
-<h1>Linking your Google account to your page</h1>
+<h1 id="toc_2">Linking your Google account to your page</h1>
 
 <p>So one last step add a link to your Google+ profile to your page. Using the following code. the <code>href</code> should be your profile URL + <code>?rel=author</code> otherwise Google will not <em>relate</em> your authorship to the page.</p>
 
@@ -224,7 +347,7 @@
 
 <p><img src="http://harleykwyn.com/images/StandardJekyll.png" alt="Out of box Jekyll"></p>
 
-<h3>How can we fix that?</h3>
+<h3 id="toc_0">How can we fix that?</h3>
 
 <p>Well for <del>lazy</del> clever people like you and me we have our google fu to find themes like <a href="http://jekyllthemes.org/">these</a>. There are many more though so make sure to go explore! Don&#39;t want all of our blogs to look the same after all.</p>
 
@@ -274,7 +397,7 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 <p>Alright! go have fun and build some slick looking sites.</p>
 
-<h3>References</h3>
+<h3 id="toc_1">References</h3>
 
 <p><a href="http://jekyllthemes.org/themes/herringcove-theme/">Jekyll themes</a></p>
 
@@ -293,7 +416,7 @@ Another helpful thing to know is that you can test if your edits will build usin
   <div class="entry-content">
     <p>Github pages are awesome, and with jekyll and cool themes--like the one I&#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. <em>username</em>.github.io. Wait this is my page! Not github&#39;s...</p>
 
-<h3>How can we fix that?</h3>
+<h3 id="toc_0">How can we fix that?</h3>
 
 <ol>
 <li>Acquire a domain name
@@ -318,129 +441,11 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 <p>Then just push your changes and you&#39;re done and on your way! Happy blogging. :)</p>
 
-<h3>References</h3>
+<h3 id="toc_1">References</h3>
 
 <p><a href="http://pages.github.com/">Github Pages Documentation</a></p>
 
 <p><a href="http://jekyllrb.com/">Jekyll</a></p>
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-23T00:00:00+00:00"><a href="http://harleykwyn.com/Recursion-closure-and-iteration/">January 23, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://harleykwyn.com/Recursion-closure-and-iteration/" rel="bookmark" title="Recursion, Closure, and Iteration" itemprop="url">Recursion, Closure, and Iteration</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <h2>Background</h2>
-
-<p>There&#39;s been quite some discussion about recursion and iteration in our classes at Hack Reactor when dealing with toy problems.</p>
-
-<p>One of the toy problems we approached was a simple tree map function and we were wondering what would be effectively faster in implementation.</p>
-
-<p>For those of you who don&#39;t know what a tree map function is it is an algorithm that takes in a <a href="http://en.wikipedia.org/wiki/Tree_%28data_structure%29">tree data structure</a> and <a href="http://en.wikipedia.org/wiki/Map_%28higher-order_function%29">maps</a> a function to each value in that tree and returns a tree containing the new values but in the same structure as before.</p>
-
-<p>To test this I&#39;m going to implement three different methods.</p>
-
-<ol>
-<li><a href="http://en.wikipedia.org/wiki/Recursion">Recursion</a> with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">closure variable</a> to keep track of answers </li>
-<li><a href="http://en.wikipedia.org/wiki/Recursion#Functional_recursion">Functional recursion</a> which passes in all variables with each recursive call.</li>
-<li>Iteration which uses a while loop to iterate over all of the trees using a stack to manipulate data for <a href="http://en.wikipedia.org/wiki/Tree_traversal#Depth-first">depth-first traversal</a></li>
-</ol>
-
-<p>To understand the conceptual difference of all of these I&#39;m going to draw you a scenario. Imagine a teacher wants to record all of the names of the students in the class. The teacher could go about this in many ways. Imagine that you have to iterate over all students. You could imagine the following:</p>
-
-<ol>
-<li>Recursion with a closure : 
-Someone standing with a notepad writing the answer of each individual down and handing it to the teacher</li>
-<li>Functional recursion: 
-Every student in the chain writing their answer down on a note pad and passing it to the next student and eventually passing it all the way back to the teacher</li>
-<li>Iteration: 
-Teacher going to each student and telling them to write their answer down on a note pad the teacher is holding.</li>
-</ol>
-
-<h2>Implementations</h2>
-
-<p>Ideally all of the following implementations should be executed in O(n) time. This is mainly to test V8&#39;s (chrome&#39;s javascript engine) handling of recursion, closure scopes, and iterations. </p>
-
-<h3>Functional Recursion</h3>
-
-<div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
-  <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span> 
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-    <span class="nx">newTree</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span> <span class="k">this</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">newTree</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
-
-<h3>Closure Recursion</h3>
-
-<div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">closureMap</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
-  <span class="kd">var</span> <span class="nx">buildNode</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">node</span><span class="p">,</span> <span class="nx">newNode</span><span class="p">){</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">node</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-      <span class="nx">newNode</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span> <span class="p">);</span>
-      <span class="nx">buildNode</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">node</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">newNode</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-  <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span> <span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">);</span>
-  <span class="nx">buildNode</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="nx">newTree</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">newTree</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
-
-<h3>Iterative</h3>
-
-<div class="highlight"><pre><code class="javascript"><span class="nx">Tree</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">iterativeMap</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">newTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Tree</span><span class="p">(</span><span class="nx">callback</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span>
-  <span class="kd">var</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="k">this</span><span class="p">,</span> <span class="nx">newTree</span><span class="p">]</span> <span class="p">];</span>
-  <span class="k">while</span><span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-    <span class="nx">currentNodes</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
-    <span class="nx">node</span> <span class="o">=</span> <span class="nx">currentNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-    <span class="nx">newNode</span> <span class="o">=</span> <span class="nx">currentNodes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-    <span class="nx">newNode</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">node</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-      <span class="nx">newNode</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">node</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span><span class="p">);</span>
-      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span> <span class="nx">node</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">newNode</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">]);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">newTree</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
-
-<h2>PerfJS test results</h2>
-
-<p>On my computer the results of the <a href="http://jsperf.com/tree-map-kwyn">perfJS spec</a> I created show that the recursive solution is the most optimal with closure recursion coming in a close second at 16% less operations per second, and then the slowest being iterative without 18% less operations per second. This may be due to the fact that the recursion implementation has less variable declarations and calls to pop and push functions which can be quite expensive on their own. I encourage you to run <a href="http://jsperf.com/tree-map-kwyn">my perfJS</a> on your own computer and in different browsers and report back to me what you find!</p>
-
-<p>For larger problems recursion may run into space issues if you are not closing scope after each recursive call. </p>
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-11T00:00:00+00:00"><a href="http://harleykwyn.com/impostor-syndrom/">January 11, 2014</a></time></span><span class="author vcard"><span class="fn"><a href="http://harleykwyn.com/about/" title="About Kwyn Alice Meagher">Kwyn Alice Meagher</a></span></span></div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://harleykwyn.com/impostor-syndrom/" rel="bookmark" title="Impostor Syndrome" itemprop="url">Impostor Syndrome</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <p>I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I&#39;m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.</p>
-
-<p>The way to deal with this is to make sure that whoever is typing, is following the verbal logic that the other pair is dictating. Never should one person be typing out code silently without input of the other pair. If you find your self sitting in silence and your pair is typing away without a word you should stop your pair and ask to drive for a moment and do the typing while they explain their logic to you.</p>
-
-<p>Even when this balance between &quot;driving&quot; and &quot;navigating&quot; is achieved there&#39;s a key question that I ask myself.</p>
-
-<p>Can I complete this prompt on my own, from scratch. If the answer in my head is yes, I attempt to go do it on my own and if I fail then I seek out help. This is not ideal though if you can&#39;t implement the same code that you just wrote with your pair by yourself, ideally you will follow the driving and navigating paradigm as best as possible..</p>
-
-<p>This paradigm allows for a few things to happen. The driver acts as an interpreter for the navigator. If the navigator&#39;s logic is not sound the driver acts as a check against any faults in the logic. It also, in turn, allows the driver to experience the implementation of logic that may not be entirely aligned with their own.</p>
-
-<p>So if you find yourself not driving, and instead navigating and coming up with logic, you should not feel like an impostor. You are the one coming up with the logic that makes the code work in the desired fashion and if you are driving, then you are also demonstrating the skills to interpret sound logic into code.</p>
-
-<p>Just remember, the majority of coders throughout their life will feel like they are in impostor. You&#39;re not alone. Keep calm and code on.</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -457,9 +462,15 @@ Teacher going to each student and telling them to write their answer down on a n
       
     </li>
     
+      <li>
+        
+          <a href="http://harleykwyn.com/page2">2</a>
+        
+      </li>
+    
   </ul>
   
-    Next
+    <a href="http://harleykwyn.com/page2" class="btn">Next</a>
   
 </div><!-- /.pagination -->
 </div><!-- /#main -->
