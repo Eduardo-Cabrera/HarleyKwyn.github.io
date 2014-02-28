@@ -16,7 +16,7 @@ Machine learning is a growing field of interest of high demand and tends to appe
 
 #The Devil's in the Details
 
-Before we dive into the specifics of the work flow I would like to posit the idea that features are arguably the most important thing when it comes to executing machine learning as a hacker and not a PhD in computer science and high level algorithms. We can abstract much of the intricacies of the algorithmic parts of machine learning with libraries such as [Mahout](https://mahout.apache.org/) and [Sci-kit Learn](http://scikit-learn.org/)
+Before we dive into the specifics of the work flow I would like to posit the idea that features are arguably the most important thing when it comes to executing machine learning as a hacker and not a PhD in computer science. We can abstract much of the intricacies of the algorithmic parts of machine learning with libraries such as [Mahout](https://mahout.apache.org/) and [Sci-kit Learn](http://scikit-learn.org/)
 
 #Overview
 
@@ -29,15 +29,15 @@ Before we dive into the specifics of the work flow I would like to posit the ide
 
 ##1. Data Processing
 
-This is basically putting a label on your data as well as removing data. This task is often outsourced to humans on a large scale for complex image labeling tasks. With raw statistical data generated through website APIs one does not have to deal with image determination. Most of the time as a Hacker you will not be doing this part of the process but it is important to understand that this does have to happen at some point.
+This is basically putting a label on your data. This task is often outsourced to humans on a large scale for complex image labeling tasks. With raw statistical data generated through website APIs one does not have to deal with image determination. Most of the time as a Hacker you will not be doing this part of the process but it is important to understand that this does have to happen at some point.
 
-For playing around with images ___ is a handy pre-labeled image database.
+For playing around with images [this](http://www.cs.cmu.edu/~cil/v-images.html) is a handy pre-labeled image database.
 
 ##2. Feature Extraction and Selection
 
-Going back to asking the right question. Features are metrics or meta data about the data that you wish to learn something or predict. In this case we're talking about images. There a many libraries out there for image processing and reduction of dimensionality for features. It just takes a quick Google search. Sci-kit Image is my personal favorite. This is often the most challenging but productive step in the process and frequently requires iteration and mixing combinations of features that are associated with a specific label.
+Going back to asking the right question. Features are metrics or meta data about the label you wish to classify or predict. In this case we're talking about images. There are many libraries out there for image processing and reduction of dimensionality for features. It just takes a quick Google search. Sci-kit Image is my personal favorite. This is often the most challenging but productive step in the process and frequently requires iteration and mixing combinations of features that are associated with a specific label.
 
-Some features compliment each other and some take away from each other. It's up to you to determine the secret sauce that makes for the best finished algorithm model. 
+Some features complement each other and some take away from each other. It's up to you to determine the secret sauce that makes for the best finished algorithm model. 
 
 ##3. Writing the algorithm
 
@@ -45,11 +45,13 @@ If you're ambitious you can write your own algorithms but as stated before I sug
 
 ##4. Training the algorithm
 
-This is the easy part. Abstract the actual writing of the algorithm to Sci-kit learn and throw in your properly formatted data and you're up and running. It's just a matter of tweaking the parameters to find an optimal algorithm architecture and partitioning your data into training and testing. A 50/50 split between train and test is usually good. You can also run something called a [cross-validationn](http://en.wikipedia.org/wiki/Cross-validation_(statistics)) test on the data with your algorithm if you want to get an idea for how accurate the algorithm is over the entire data set.
+This is the easy part. Abstract the actual writing of the algorithm to Sci-kit learn and throw in your properly formatted data and you're up and running. It's just a matter of tweaking the parameters to find an optimal algorithm architecture and partitioning your data into training and testing. A 50/50 split between train and test is usually good. You can also run something called a [cross-validation](http://en.wikipedia.org/wiki/Cross-validation_(statistics)) test on the data with your algorithm if you want to get an idea for how accurate the algorithm is over the entire data set.
+
+Once the algorithm is trained it will output a function called a model which you will use to predict the label or classification you trained it on.
 
 ##5. Applying the algorithm.
 
-To apply the algorithm you must also extract features from the test data that you wish to classify or predict something about that data 
+To apply the algorithm model you must also extract features from the test data set in the same way that you did for the training set. Then you can run the algorithm model on the test data to predict the labels or classification of that data.
 
 ##6. Repeat
 
