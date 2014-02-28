@@ -10,15 +10,15 @@ comments: true
 share: true
 ---
 
-##Background
+#Background
 
 Machine learning is a growing field of interest of high demand and tends to appear arcane to even the bravest programmers. However, a hacker can dive into programming just as much as a computer scientist. The key is in the work flow which we will outline in a high level manner in this post. I will go into how to implement the bulk of this work flow with python and Sci-kit libraries in a later post.
 
-##The Devils in the Details
+#The Devils in the Details
 
 Before we dive into the specifics of the work flow I would like to posit the idea that features are arguably the most important thing when it comes to executing machine learning as a hacker and not a PhD in computer science and high level algorithms. We can abstract much of the intricacies of the algorithmic parts of machine learning with libraries such as [Mahout](https://mahout.apache.org/) and [Sci-kit Learn](http://scikit-learn.org/)
 
-##Overview
+#Overview
 
 1. Data Processing
 2. Feature Extraction and Selection
@@ -27,13 +27,13 @@ Before we dive into the specifics of the work flow I would like to posit the ide
 5. Applying the algorithm
 6. Repeat
 
-###1. Data Processing
+##1. Data Processing
 
 This is basically putting a label on your data as well as removing data. This task is often outsourced to humans on a large scale for complex image labeling tasks. With raw statistical data generated through website APIs one does not have to deal with image determination. Most of the time as a Hacker you will not be doing this part of the process but it is important to understand that this does have to happen at some point.
 
 For playing around with images ___ is a handy pre-labeled image database.
 
-###2. Feature Extraction and Selection
+##2. Feature Extraction and Selection
 
 Going back to asking the right question. Features are metrics or meta data about the data that you wish to learn something or predict. In this case we're talking about images. There a many libraries out there for image processing and reduction of dimensionality for features. It just takes a quick Google search. Sci-kit Image is my personal favorite. This is often the most challenging but productive step in the process and frequently requires iteration and mixing combinations of features that are associated with a specific label.
 
