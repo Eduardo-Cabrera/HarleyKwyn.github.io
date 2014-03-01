@@ -19,6 +19,8 @@ After much effort trying to execute the supposed 20 minute solution]( referenced
 
 __If you want to cheat, you can jump down to the bottom of the page for the full code but it'd be better if you could try to follow along.__
 
+<!-- more -->
+
 _note: I this is designed for a Unix/MacOSX based setup_
 
 #Overview
@@ -32,7 +34,7 @@ According to the post for beating the benchmark:
 >
 >Step 4: You have beaten the benchmark
 
-Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I'm gong to show you how to set up the environment for using Python, Sci-kit Image and Sci-kit learn.  You may want to check out the [scikit-image]() and [scikit-learn](http://scikit-learn.org/stable/documentation.html) documentation.
+Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I'm going to show you how to set up the environment for using Python, Sci-kit Image and Sci-kit learn.  You may want to check out the [scikit-image]() and [scikit-learn](http://scikit-learn.org/stable/documentation.html) documentation.
 
 
 
