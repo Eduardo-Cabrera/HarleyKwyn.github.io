@@ -22,9 +22,9 @@ If we're starting from scratch we can just fork the repo from the source and the
 
 Let's say we want to use [this](http://jekyllthemes.org/themes/herringcove-theme/) theme. 
 
-You'll got to the "Home Page" and fork the repo
+You'll go to the "Home Page" and fork the repo
 
-Now rename the repo to your _username_.github.io . To do this just got to the repo settings and replace "herring-cove" with "_username_.github.io"
+Now rename the repo to your _username_.github.io . To do this just go to the repo settings and replace "herring-cove" with "_username_.github.io"
 
 {% highlight bash %}
   ~ $ git clone username.github.io
