@@ -2,52 +2,451 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Harley Kwyn Hacking</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://harleykwyn.com/feed.xml" />
-<link rel="alternate" type="text/html" href="http://harleykwyn.com" />
-<updated>2014-01-31T19:03:46+00:00</updated>
-<id>http://harleykwyn.com/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2014-03-01T00:05:16+00:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Kwyn Alice Meagher</name>
-  <uri>http://harleykwyn.com/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>kwyn.meagher@gmail.com</email>
 </author>
 
 
 <entry>
-  <title type="html"><![CDATA[Depth First vs Breadth First]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/depth-first-breadth-first/" />
-  <id>http://harleykwyn.com/depth-first-breadth-first</id>
-  <updated>2014-01-31T00:00:00-00:00</updated>
-  <published>2014-01-29T00:00:00+00:00</published>
+  <title type="html"><![CDATA[So You Want to be a Kaggle Wizard]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/so-you-want-to-be-a-kaggle-wizard/" />
+  <id>http://localhost:4000/so-you-want-to-be-a-kaggle-wizard</id>
+  <updated>2014-02-27T00:00:00-00:00</updated>
+  <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
-  <content type="html">&lt;p&gt;So currently there are these nice articles on wikipedia to help you with &lt;a href=&quot;http://en.wikipedia.org/wiki/Breadth-first_search&quot;&gt;breadth first search&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/Depth-first_search&quot;&gt;depth first search&lt;/a&gt;.&lt;/p&gt;
+  <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
 
-&lt;p&gt;I&amp;#39;m going to destill these out for you so you don&amp;#39;t have to go through the pain of understanding the differences.&lt;/p&gt;
+&lt;p&gt;My group at Hack Reactor decided for a short project we would attempt to tackle a Kaggel competition. Specifically the &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge&quot;&gt;GalaxyZoo Kaggel competition&lt;/a&gt;. A daunting challenge considering 1. we are new to machine learning. 2. some of us are new to programming and 3. we only have two weeks to work on this specific project.&lt;/p&gt;
 
-&lt;p&gt;Their images of how the traversial works are actually spot on. So We&amp;#39;ll put that here.
-| &lt;strong&gt;Depth First&lt;/strong&gt; | &lt;strong&gt;Breadth First&lt;/strong&gt; |
-| --------------- | -----------------: |
-| &lt;a href=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Depth-first-tree.svg/500px-Depth-first-tree.svg.png&quot;&gt;Depth First&lt;/a&gt; | &lt;a href=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/500px-Breadth-first-tree.svg.png&quot;&gt;Breadth First&lt;/a&gt; |&lt;/p&gt;
+&lt;p&gt;Digging into researching and reading the forums we found some helpful information and actually found this &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/forums/t/6803/beating-the-benchmark&quot;&gt;post&lt;/a&gt;.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/depth-first-breadth-first/&quot;&gt;Depth First vs Breadth First&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 29, 2014.&lt;/p&gt;</content>
+&lt;p&gt;After much effort trying to execute the supposed 20 minute solution]( referenced on the GalaxyZoo Kaggel competition forums I&amp;#39;ve decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If you want to cheat, you can jump down to the bottom of the page for the full code but it&amp;#39;d be better if you could try to follow along.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;note: I this is designed for a Unix/MacOSX based setup&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_1&quot;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;According to the post for beating the benchmark: &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Step 1 : for all images in train and test, resize to 50x50, and vectorize to 1-D array.&lt;/p&gt;
+
+&lt;p&gt;Step 2: Run the RandomForestRegression from scikit-learn on the train and test set with 10 estimators.&lt;/p&gt;
+
+&lt;p&gt;Step 3: Submit Results&lt;/p&gt;
+
+&lt;p&gt;Step 4: You have beaten the benchmark&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I&amp;#39;m gong to show you how to set up the environment for using Python, Sci-kit Image and Sci-kit learn.  You may want to check out the &lt;a href=&quot;&quot;&gt;scikit-image&lt;/a&gt; and &lt;a href=&quot;http://scikit-learn.org/stable/documentation.html&quot;&gt;scikit-learn&lt;/a&gt; documentation.&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_2&quot;&gt;Snake Charming (Installing Anaconda)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://store.continuum.io/cshop/anaconda/&quot;&gt;Anaconda&lt;/a&gt; is an awesome python package that contains all of the awesome tools we&amp;#39;ll be using and many others. It&amp;#39;s simpler to run the graphic installer provided by Anaconda and following their instillations instruction rather than writing out all the install commands for every dependency. Be sure to install it for your current user.&lt;/p&gt;
+
+&lt;p&gt;You should now be able to run the command &lt;code&gt;spyder&lt;/code&gt; to open up a python editor.&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_3&quot;&gt;Step 1.&lt;/h1&gt;
+
+&lt;h2 id=&quot;toc_4&quot;&gt;Create a python file&lt;/h2&gt;
+
+&lt;p&gt;Get started by creating an empty python file named &lt;code&gt;MyFirstForest.py&lt;/code&gt; and open it up in your favorite editor. If you don&amp;#39;t have one I suggest spyder as mentioned previously or &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_5&quot;&gt;Getting the images&lt;/h2&gt;
+
+&lt;p&gt;If you want to do this with the kaggel competition data you can down load it &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data&quot;&gt;here&lt;/a&gt; after you make an account and agree to the competition terms. You&amp;#39;ll want to download all of the files and extract them into you workspace directory. Unzipping the image files can take some time.&lt;/p&gt;
+
+&lt;p&gt;The very first thing you&amp;#39;ll need to do is get a hold of the images which requires the &lt;code&gt;os&lt;/code&gt; module to access the file system so start by typing &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;at the top of the file. This will import the os utility that allows us to access the file system and other parts of the operating system.&lt;/p&gt;
+
+&lt;p&gt;Leave a bit of space and type the following code to actually loop through the &lt;code&gt;trainingImages&lt;/code&gt; directory and read each of the images into a variable that we can manipulate. &lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll also need to initialize an empty list that will hold all our training features. I aptly named mine &lt;code&gt;trainingFeatures&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;#note that this path is absolute path to your training image directory&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/kwyn/workspace/images_training_rev1/&amp;#39;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;   
+    &lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;note that the path for this command is &lt;a href=&quot;http://en.wikipedia.org/wiki/Path_(computing)#Example&quot;&gt;absolute&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;toc_6&quot;&gt;Resize the images&lt;/h2&gt;
+
+&lt;p&gt;Awesome, so we have our image, but we need to still resize it and we also need to flatten it into a 1D array, where every pixel&amp;#39;s RGB value is an element in the array.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage.transform&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will import the transform.resize utility from the scikit-image library that will allow us to resize the image.&lt;/p&gt;
+
+&lt;p&gt;Place the following command after &lt;code&gt;img = io.imread(filePath)&lt;/code&gt; &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;toc_7&quot;&gt;Convert the images into a list&lt;/h2&gt;
+
+&lt;p&gt;So first we&amp;#39;ll need a list to store our feature lists in. An array of arrays for those of you who don&amp;#39;t speak python. You&amp;#39;ll pick up on it soon enough.&lt;/p&gt;
+
+&lt;p&gt;Then after the &lt;code&gt;img = resize(img, (50,50))&lt;/code&gt; you&amp;#39;ll want to include the following line to convert the image to a numpy array:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;toc_8&quot;&gt;Flatten the image list&lt;/h1&gt;
+
+&lt;p&gt;This isn&amp;#39;t a flattened array though so we need to also flatten this. With python we have handy list comprehensions that will let us do this with single line using the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and lastly append this to the an array you&amp;#39;ll save to run the your algorithms on later with the following line of code:&lt;/p&gt;
+
+&lt;p&gt;We need to hoist a variable for to store each of these arrays as an array of features that we will feed into our random forest.&lt;/p&gt;
+
+&lt;p&gt;So right after the line&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll include this line of code:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;toc_9&quot;&gt;Convert list to a numpy array&lt;/h2&gt;
+
+&lt;p&gt;scikit-learn methods use the numpy library so we can&amp;#39;t feed it a list we must first convert the tuple list we have just created into a numpy array. To do that we need to have import the numpy feature and alias it to something pretty like &lt;code&gt;np&lt;/code&gt;. You want to do that by including the that with the following line after the the imports :&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and then make sure you write the next line of code out of the loop, to do this you have to make sure that you are not indented at all as python is white space sensitive and then include the following line to convert the list to a numpy array:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;trainingFeature&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You should have something that looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;csv&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage.transform&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;opening training images&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/kwyn/workspace/images_training_rev1/&amp;#39;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;   
+    &lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorconv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgb2grey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll have to repeat this code for the testing data. Just adjust the path name and the variable names for the &lt;code&gt;trainingFeatures&lt;/code&gt; list to something like &lt;code&gt;testingFeatures&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re about half way there, keep going!&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_10&quot;&gt;Step 2.&lt;/h1&gt;
+
+&lt;h2 id=&quot;toc_11&quot;&gt;Load the training data&lt;/h2&gt;
+
+&lt;p&gt;The training data is given to us in a &lt;code&gt;.csv&lt;/code&gt; format. We can use a numpy module that to read the data directly into a numpy array with &lt;code&gt;np.loadtxt&lt;/code&gt; which you can read up on in the numpy documentation for &lt;a href=&quot;http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&quot;&gt;loadtxt&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;This following code will load the csv data into a numpy array:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/Users/kwyn/workspace/training_solutions_rev1.csv&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numColumns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainingSolutions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loadtxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;delimiter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;skiprows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usecols&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numColumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We aren&amp;#39;t interested in the header of the data being included in our numpy array so we remove that and we also exclude the the first columns with the galaxy IDs.&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_12&quot;&gt;Train the algorithm&lt;/h2&gt;
+
+&lt;p&gt;Time for the exciting part! Using scikit-learn to train a random forest on the data. We&amp;#39;ll first need to include the scikit-learn module for random forest regressors. You can do that by including the following with your import commands at the top of the file.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.ensemble&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestRegressor&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If your interested in delving into what all the parameters mean you can check the &lt;a href=&quot;http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html&quot;&gt;sckit-learn documentation&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Then after all the previous code we will append the following code to actually train our algorithm.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestRegressor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_estimators&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_features&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_jobs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trainingSolutions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once this successfully runs then you&amp;#39;ll have a trained algorithm!&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_13&quot;&gt;Saving your algorithm with joblib&lt;/h2&gt;
+
+&lt;p&gt;One more module that you will most likely want to exploit is called &lt;code&gt;joblib&lt;/code&gt; it allows us to directly save python objects and use them later after the script has finished running. In a later post I&amp;#39;ll explain the difference between using this and pickling that is frequently used in python code. You can read more about the module &lt;a href=&quot;http://pythonhosted.org//joblib/&quot;&gt;here&lt;/a&gt; &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.externals&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then right after the lines that train your algorithm write the following code setting the path to a file you wish to save your algorithm in I chose &lt;code&gt;Algorithms&lt;/code&gt; for mine&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;algorithmName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;myFirstForest&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Algorthims&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you iterate over different parameters and changing features in the future you&amp;#39;ll probably change the name in  of the &lt;code&gt;algorithmName&lt;/code&gt; variable. &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Be sure to create this the Algorithms folder before running the python script&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_14&quot;&gt;Running the produced algorithm on the test data&lt;/h1&gt;
+
+&lt;p&gt;This part is also easy. Just make sure to use joblib to save your prediction somewhere just in case writing to CSV doesn&amp;#39;t go as planned.&lt;/p&gt;
+
+&lt;p&gt;Include the following code:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Solutions/firstPrediction&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;toc_15&quot;&gt;Step 3.&lt;/h1&gt;
+
+&lt;h2 id=&quot;toc_16&quot;&gt;Formatting the prediction data for submission&lt;/h2&gt;
+
+&lt;p&gt;The Kaggel competition expects the csv to be exported in a specific format so so that the tester they have can read the file correctly and perform the error calculations. For this we use numpy&amp;#39;s &lt;code&gt;.savetxt&lt;/code&gt; method. If you want to know more about how this works you can read up on numpys documentation for &lt;a href=&quot;http://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html&quot;&gt;savetxt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For now just copy this code after your predictions have been made&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;headerRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;GalaxyID,Class1.1,Class1.2,Class1.3,Class2.1,Class2.2,Class3.1,Class3.2,Class4.1,Class4.2,Class5.1,Class5.2,Class5.3,Class5.4,Class6.1,Class6.2,Class7.1,Class7.2,Class7.3,Class8.1,Class8.2,Class8.3,Class8.4,Class8.5,Class8.6,Class8.7,Class9.1,Class9.2,Class9.3,Class10.1,Class10.2,Class10.3,Class11.1,Class11.2,Class11.3,Class11.4,Class11.5,Class11.6&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;formatting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savetxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Predictions/firstPrediction.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;delimiter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headerRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;footer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Submit the output file in the Solutions folder to the competition.&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_17&quot;&gt;Step 4.&lt;/h1&gt;
+
+&lt;h2 id=&quot;toc_18&quot;&gt;Ta&amp;#39;da you&amp;#39;ve beaten the bench mark&lt;/h2&gt;
+
+&lt;p&gt;Hope this has helped those of you new to python and machine learning. If you&amp;#39;re clever you&amp;#39;ll start experimenting with the scikit-learn morphology library and tweaking features.&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_19&quot;&gt;Complete Code&lt;/h1&gt;
+
+&lt;p&gt;Your code should look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;skimage.transform&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.externals&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.ensemble&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestRegressor&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Opening training images&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/Users/kwyn/workspace/images_training_rev1/&amp;#39;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;   
+    &lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pathToTrainingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorconv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgb2grey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt; 
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Finished converting training images to numpy arrays&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Opening test images&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pathToTestingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/Users/kwyn/workspace/images_test_rev1/&amp;quot;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTestingImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;testingFeatures&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pathToTestingImages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorconv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgb2grey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrayOfImage&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;testingFeatures&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flattenedArrayOfImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;testingFeatures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Finished converting test images to numpy array.&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Opening training data...&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pathToTrainingData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/Users/kwyn/workspace/training_solutions_rev1.csv&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numColumns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;trainingSolutions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loadtxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathToTrainingData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;delimiter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;skiprows&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usecols&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numColumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trainingSolutions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Finished loading training data&amp;quot;&lt;/span&gt;  
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;starting random forest training&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomForestRegressor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_estimators&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_features&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_jobs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oob_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trainingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trainingSolutions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Finished random forest training&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Saving algorithm&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;algorithmName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;myFirstForest&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Algorthims/&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;algorithmName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;starting testing...&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rfr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testingFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;joblib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;Solutions/firstPrediction&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;finished testing&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;writing predictions to csv&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;galaxyIDs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;headerRow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;GalaxyID,Class1.1,Class1.2,Class1.3,Class2.1,Class2.2,Class3.1,Class3.2,Class4.1,Class4.2,Class5.1,Class5.2,Class5.3,Class5.4,Class6.1,Class6.2,Class7.1,Class7.2,Class7.3,Class8.1,Class8.2,Class8.3,Class8.4,Class8.5,Class8.6,Class8.7,Class9.1,Class9.2,Class9.3,Class10.1,Class10.2,Class10.3,Class11.1,Class11.2,Class11.3,Class11.4,Class11.5,Class11.6&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;formatting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savetxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Predictions/firstPrediction.csv&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formatting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;delimiter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headerRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;footer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;finished you can find you predictions in Predictions folder&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Machine Learning Work Flow for Hackers]]></title>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/machine-learning-work-flow/" />
+  <id>http://localhost:4000/machine-learning-work-flow</id>
+  <updated>2014-02-27T00:00:00-00:00</updated>
+  <published>2014-02-27T00:00:00+00:00</published>
+  
+  <author>
+    <name>Kwyn Alice Meagher</name>
+    <uri>http://localhost:4000</uri>
+    <email>kwyn.meagher@gmail.com</email>
+  </author>
+  <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;Machine learning is a growing field of interest of high demand and tends to appear arcane to even the bravest programmers. However, a hacker can dive into programming just as much as a computer scientist. The key is in the work flow which we will outline in a high level manner in this post. I will go into how to implement the bulk of this work flow with python and Sci-kit libraries in a later post.&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_1&quot;&gt;The Devil&amp;#39;s in the Details&lt;/h1&gt;
+
+&lt;p&gt;Before we dive into the specifics of the work flow I would like to posit the idea that features are arguably the most important thing when it comes to executing machine learning as a hacker and not a PhD in computer science. We can abstract much of the intricacies of the algorithmic parts of machine learning with libraries such as &lt;a href=&quot;https://mahout.apache.org/&quot;&gt;Mahout&lt;/a&gt; and &lt;a href=&quot;http://scikit-learn.org/&quot;&gt;Sci-kit Learn&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_2&quot;&gt;Overview&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Data Processing&lt;/li&gt;
+&lt;li&gt;Feature Extraction and Selection&lt;/li&gt;
+&lt;li&gt;Writing the algorithm (or &lt;code&gt;import sklearn&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Training the algorithm&lt;/li&gt;
+&lt;li&gt;Applying the algorithm&lt;/li&gt;
+&lt;li&gt;Repeat&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;toc_3&quot;&gt;1. Data Processing&lt;/h2&gt;
+
+&lt;p&gt;This is basically putting a label on your data. This task is often outsourced to humans on a large scale for complex image labeling tasks. With raw statistical data generated through website APIs one does not have to deal with image determination. Most of the time as a Hacker you will not be doing this part of the process but it is important to understand that this does have to happen at some point.&lt;/p&gt;
+
+&lt;p&gt;For playing around with images &lt;a href=&quot;http://www.image-net.org/&quot;&gt;this&lt;/a&gt; is a handy pre-labeled image database.&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_4&quot;&gt;2. Feature Extraction and Selection&lt;/h2&gt;
+
+&lt;p&gt;Going back to asking the right question. Features are metrics or meta data about the label you wish to classify or predict. In this case we&amp;#39;re talking about images. There are many libraries out there for image processing and reduction of dimensionality for features. It just takes a quick Google search. Sci-kit Image is my personal favorite. This is often the most challenging but productive step in the process and frequently requires iteration and mixing combinations of features that are associated with a specific label.&lt;/p&gt;
+
+&lt;p&gt;Some features complement each other and some take away from each other. It&amp;#39;s up to you to determine the secret sauce that makes for the best finished algorithm model. &lt;/p&gt;
+
+&lt;h2 id=&quot;toc_5&quot;&gt;3. Writing the algorithm&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;#39;re ambitious you can write your own algorithms but as stated before I suggest using libraries. If you want to understand the math that goes into a lot of this stuff you can take a quick coursera course &lt;a href=&quot;https://class.coursera.org/ml-003/lecture/preview&quot;&gt;here&lt;/a&gt; &lt;/p&gt;
+
+&lt;h2 id=&quot;toc_6&quot;&gt;4. Training the algorithm&lt;/h2&gt;
+
+&lt;p&gt;This is the easy part. Abstract the actual writing of the algorithm to Sci-kit learn and throw in your properly formatted data and you&amp;#39;re up and running. It&amp;#39;s just a matter of tweaking the parameters to find an optimal algorithm architecture and partitioning your data into training and testing. A 50/50 split between train and test is usually good. You can also run something called a &lt;a href=&quot;http://en.wikipedia.org/wiki/Cross-validation_(statistics&quot;&gt;cross-validation&lt;/a&gt;) test on the data with your algorithm if you want to get an idea for how accurate the algorithm is over the entire data set.&lt;/p&gt;
+
+&lt;p&gt;Once the algorithm is trained it will output a function called a model which you will use to predict the label or classification you trained it on.&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_7&quot;&gt;5. Applying the algorithm.&lt;/h2&gt;
+
+&lt;p&gt;To apply the algorithm model you must also extract features from the test data set in the same way that you did for the training set. Then you can run the algorithm model on the test data to predict the labels or classification of that data.&lt;/p&gt;
+
+&lt;h2 id=&quot;toc_8&quot;&gt;6. Repeat&lt;/h2&gt;
+
+&lt;p&gt;Evaluate the difference in the accuracy of your algorithm and iterate over the previous steps tweaking the parameters of the algorithm as well as changing the combination of features or extracting new features from your data. Try to be intelligent and figure out intuitively what features should correlate highly with the specific labels you are interested in. &lt;/p&gt;
+
+&lt;h1 id=&quot;toc_9&quot;&gt;Take Away&lt;/h1&gt;
+
+&lt;p&gt;So in short what you need to worry about:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Formatting data&lt;/li&gt;
+&lt;li&gt;Extracting important features and being clever about their correlation to the label of interest&lt;/li&gt;
+&lt;li&gt;Installing and playing with different algorithms parameters from those libraries&lt;/li&gt;
+&lt;li&gt;Apply the model, evaluate benefit of each feature and iterate with the permutations of features.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Go start hacking! Machine learning shouldn&amp;#39;t be left to the ivory tower.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion Functional vs Closure Part II]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/recursion-vs-closure-part-2/" />
-  <id>http://harleykwyn.com/recursion-vs-closure-part-2</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/recursion-vs-closure-part-2/" />
+  <id>http://localhost:4000/recursion-vs-closure-part-2</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -135,20 +534,20 @@
 
 &lt;p&gt;I encourage you to run &lt;a href=&quot;http://jsperf.com/tree-map-kwyn&quot;&gt;my perfJS&lt;/a&gt; on your own computer and in different browsers and report back to me what you find!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Google Comments in Jekyll]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/google-comments-in-jekyll/" />
-  <id>http://harleykwyn.com/google-comments-in-jekyll</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/google-comments-in-jekyll/" />
+  <id>http://localhost:4000/google-comments-in-jekyll</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Last post in this unofficial blog posts about blogging series. &lt;/p&gt;
@@ -166,7 +565,7 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Find where you want your comments to appear in your site&amp;#39;s HTML. Preferablly the comments will be post specific so it&amp;#39;s mostl likely to be found in &lt;code&gt;_layout&lt;/code&gt; in something that look like &lt;code&gt;post.html&lt;/code&gt; and in a wrapper, quite possibly a &lt;code&gt;&amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt;&lt;/code&gt; tab&lt;/p&gt;
+&lt;p&gt;Find where you want your comments to appear in your site&amp;#39;s HTML. Preferably the comments will be post specific so it&amp;#39;s most likely to be found in &lt;code&gt;_layout&lt;/code&gt; in something that look like &lt;code&gt;post.html&lt;/code&gt; and in a wrapper, quite possibly a &lt;code&gt;&amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt;&lt;/code&gt; tab&lt;/p&gt;
 
 &lt;p&gt;Copy this div into that container&lt;/p&gt;
 
@@ -187,21 +586,21 @@
 
 &lt;p&gt;This can be done by navigating to your Google+ profile.&lt;/p&gt;
 
-&lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a defautl icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a default icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Then on the left you&amp;#39;ll click &lt;code&gt;Edit Profile&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Now scroll all the way down to the links section and click edit&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Then scroll down to to &lt;code&gt;Contributor to&lt;/code&gt; section and &lt;code&gt;add a custom link&lt;/code&gt; that points to your main domain name or &lt;em&gt;username&lt;/em&gt;.github.io&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Great now you&amp;#39;re the author of your blog. Not that you weren&amp;#39;t before, but now you&amp;#39;re ordained by the all might Google.&lt;/p&gt;
 
@@ -220,25 +619,25 @@
 
 &lt;p&gt;Now get commenting!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Slick jekyll themes + Github Pages]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" />
-  <id>http://harleykwyn.com/slick-jekyll-themes-and-github-pages</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/slick-jekyll-themes-and-github-pages/" />
+  <id>http://localhost:4000/slick-jekyll-themes-and-github-pages</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;toc_0&quot;&gt;How can we fix that?&lt;/h3&gt;
 
@@ -296,20 +695,20 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Custom domains and github pages]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/github-pages-custom-domain-setup/" />
-  <id>http://harleykwyn.com/github-pages-custom-domain-setup</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/github-pages-custom-domain-setup/" />
+  <id>http://localhost:4000/github-pages-custom-domain-setup</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Github pages are awesome, and with jekyll and cool themes--like the one I&amp;#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. &lt;em&gt;username&lt;/em&gt;.github.io. Wait this is my page! Not github&amp;#39;s...&lt;/p&gt;
@@ -326,8 +725,8 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;ol&gt;
 &lt;li&gt;When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.&lt;/li&gt;
-&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
-&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://localhost:4000/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
+&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://localhost:4000/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Create a CNAME file in your &lt;em&gt;username&lt;/em&gt;.github.io repo
 CNAME file should point to your domain name this is easily done in the root of your directory with something like &lt;/p&gt;&lt;/li&gt;
@@ -345,20 +744,20 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion, Closure, and Iteration]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/recursion-closure-and-iteration/" />
-  <id>http://harleykwyn.com/recursion-closure-and-iteration</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/recursion-closure-and-iteration/" />
+  <id>http://localhost:4000/recursion-closure-and-iteration</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-23T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -443,20 +842,20 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;For larger problems recursion may run into space issues if you are not closing scope after each recursive call. &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Impostor Syndrome]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/impostor-syndrom/" />
-  <id>http://harleykwyn.com/impostor-syndrom</id>
+ <link rel="alternate" type="text/html" href="http://localhost:4000/impostor-syndrom/" />
+  <id>http://localhost:4000/impostor-syndrom</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-11T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I&amp;#39;m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.&lt;/p&gt;
@@ -473,7 +872,7 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;Just remember, the majority of coders throughout their life will feel like they are in impostor. You&amp;#39;re not alone. Keep calm and code on.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>

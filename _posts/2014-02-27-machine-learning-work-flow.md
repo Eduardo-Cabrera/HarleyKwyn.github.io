@@ -31,7 +31,7 @@ Before we dive into the specifics of the work flow I would like to posit the ide
 
 This is basically putting a label on your data. This task is often outsourced to humans on a large scale for complex image labeling tasks. With raw statistical data generated through website APIs one does not have to deal with image determination. Most of the time as a Hacker you will not be doing this part of the process but it is important to understand that this does have to happen at some point.
 
-For playing around with images [this](http://www.cs.cmu.edu/~cil/v-images.html) is a handy pre-labeled image database.
+For playing around with images [this](http://www.image-net.org/) is a handy pre-labeled image database.
 
 ##2. Feature Extraction and Selection
 
