@@ -1,6 +1,6 @@
 ---
 layout: post
-title: So You Want to be a Kaggle Wizard
+title: So You Want to be a Kaggel Wizard
 description: "Learn ALL the things"
 modified: 2014-02-27
 tags: [machine learning, python, image processing]
