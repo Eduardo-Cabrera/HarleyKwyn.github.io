@@ -1,6 +1,6 @@
 ---
 layout: post
-title: So You Want to be a Kaggel Wizard
+title: So You Want to be a Kaggle Wizard
 description: "Learn ALL the things"
 modified: 2014-02-27
 tags: [machine learning, python, image processing]
@@ -11,11 +11,11 @@ share: true
 ---
 
 #Background
-My group at Hack Reactor decided for a short project we would attempt to tackle a Kaggel competition. Specifically the [GalaxyZoo Kaggel competition](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge). A daunting challenge considering 1. we are new to machine learning. 2. some of us are new to programming and 3. we only have two weeks to work on this specific project.
+My group at Hack Reactor decided for a short project we would attempt to tackle a Kaggle competition. Specifically the [GalaxyZoo Kaggle competition](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge). A daunting challenge considering 1. we are new to machine learning. 2. some of us are new to programming and 3. we only have two weeks to work on this specific project.
 
 Digging into researching and reading the forums we found some helpful information and actually found this [post](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/forums/t/6803/beating-the-benchmark).
 
-After much effort trying to execute the supposed 20 minute solution]( referenced on the GalaxyZoo Kaggel competition forums I've decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.
+After much effort trying to execute the supposed 20 minute solution]( referenced on the GalaxyZoo Kaggle competition forums I've decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.
 
 __If you want to cheat, you can jump down to the bottom of the page for the full code but it'd be better if you could try to follow along.__
 
@@ -50,7 +50,7 @@ Get started by creating an empty python file named `MyFirstForest.py` and open i
 
 ##Getting the images
 
-If you want to do this with the kaggel competition data you can down load it [here](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data) after you make an account and agree to the competition terms. You'll want to download all of the files and extract them into you workspace directory. Unzipping the image files can take some time.
+If you want to do this with the Kaggle competition data you can down load it [here](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data) after you make an account and agree to the competition terms. You'll want to download all of the files and extract them into you workspace directory. Unzipping the image files can take some time.
 
 The very first thing you'll need to do is get a hold of the images which requires the `os` module to access the file system so start by typing 
 {% highlight python %}
@@ -236,7 +236,7 @@ joblib.dump(prediction, 'Solutions/firstPrediction')
 
 #Step 3.
 ##Formatting the prediction data for submission
-The Kaggel competition expects the csv to be exported in a specific format so so that the tester they have can read the file correctly and perform the error calculations. For this we use numpy's `.savetxt` method. If you want to know more about how this works you can read up on numpys documentation for [savetxt](http://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html)
+The Kaggle competition expects the csv to be exported in a specific format so so that the tester they have can read the file correctly and perform the error calculations. For this we use numpy's `.savetxt` method. If you want to know more about how this works you can read up on numpys documentation for [savetxt](http://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html)
 
 For now just copy this code after your predictions have been made
 {% highlight python %}
