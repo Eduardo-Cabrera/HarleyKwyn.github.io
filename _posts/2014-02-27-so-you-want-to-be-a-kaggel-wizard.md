@@ -19,8 +19,6 @@ After much effort trying to execute the supposed 20 minute solution]( referenced
 
 __If you want to cheat, you can jump down to the bottom of the page for the full code but it'd be better if you could try to follow along.__
 
-<!-- more -->
-
 _note: I this is designed for a Unix/MacOSX based setup_
 
 #Overview
