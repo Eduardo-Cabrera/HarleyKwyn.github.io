@@ -13,9 +13,9 @@ share: true
 #Background
 My group at Hack Reactor decided for a short project we would attempt to tackle a Kaggle competition. Specifically the [GalaxyZoo Kaggle competition](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge). A daunting challenge considering 1. we are new to machine learning. 2. some of us are new to programming and 3. we only have two weeks to work on this specific project.
 
-Digging into researching and reading the forums we found some helpful information and actually found this [post](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/forums/t/6803/beating-the-benchmark).
+Diving into researching and reading the forums we found some helpful information and actually found this [post](http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/forums/t/6803/beating-the-benchmark).
 
-After much effort trying to execute the supposed 20 minute solution]( referenced on the GalaxyZoo Kaggle competition forums I've decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.
+After much effort trying to execute the supposed 20 minute solution referenced on the GalaxyZoo Kaggle competition forums I've decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.
 
 __If you want to cheat, you can jump down to the bottom of the page for the full code but it'd be better if you could try to follow along.__
 
@@ -32,7 +32,7 @@ According to the post for beating the benchmark:
 >
 >Step 4: You have beaten the benchmark
 
-Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I'm going to show you how to set up the environment for using Python, Sci-kit Image and Sci-kit learn.  You may want to check out the [scikit-image]() and [scikit-learn](http://scikit-learn.org/stable/documentation.html) documentation.
+Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I'm going to show you how to set up the environment for using Python, scikit-image and scikit-learn.  You may want to check out the [scikit-image]() and [scikit-learn](http://scikit-learn.org/stable/documentation.html) documentation.
 
 
 
