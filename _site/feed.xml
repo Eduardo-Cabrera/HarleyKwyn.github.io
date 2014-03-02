@@ -2,36 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Harley Kwyn Hacking</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-03-01T00:08:02+00:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="http://harleykwyn.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://harleykwyn.com" />
+<updated>2014-03-02T20:16:54+00:00</updated>
+<id>http://harleykwyn.com/</id>
 <author>
   <name>Kwyn Alice Meagher</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>http://harleykwyn.com/</uri>
   <email>kwyn.meagher@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[So You Want to be a Kaggle Wizard]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/so-you-want-to-be-a-kaggle-wizard/" />
-  <id>http://localhost:4000/so-you-want-to-be-a-kaggle-wizard</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/" />
+  <id>http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
 
-&lt;p&gt;My group at Hack Reactor decided for a short project we would attempt to tackle a Kaggel competition. Specifically the &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge&quot;&gt;GalaxyZoo Kaggel competition&lt;/a&gt;. A daunting challenge considering 1. we are new to machine learning. 2. some of us are new to programming and 3. we only have two weeks to work on this specific project.&lt;/p&gt;
+&lt;p&gt;My group at Hack Reactor decided for a short project we would attempt to tackle a Kaggle competition. Specifically the &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge&quot;&gt;GalaxyZoo Kaggle competition&lt;/a&gt;. A daunting challenge considering 1. we are new to machine learning. 2. some of us are new to programming and 3. we only have two weeks to work on this specific project.&lt;/p&gt;
 
-&lt;p&gt;Digging into researching and reading the forums we found some helpful information and actually found this &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/forums/t/6803/beating-the-benchmark&quot;&gt;post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Diving into researching and reading the forums we found some helpful information and actually found this &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/forums/t/6803/beating-the-benchmark&quot;&gt;post&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;After much effort trying to execute the supposed 20 minute solution]( referenced on the GalaxyZoo Kaggel competition forums I&amp;#39;ve decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.&lt;/p&gt;
+&lt;p&gt;After much effort trying to execute the supposed 20 minute solution referenced on the GalaxyZoo Kaggle competition forums I&amp;#39;ve decided to help complete newbies get up and running with python and the appropriate libraries to execute this solution.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;If you want to cheat, you can jump down to the bottom of the page for the full code but it&amp;#39;d be better if you could try to follow along.&lt;/strong&gt;&lt;/p&gt;
 
@@ -51,7 +51,7 @@
 &lt;p&gt;Step 4: You have beaten the benchmark&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I&amp;#39;m gong to show you how to set up the environment for using Python, Sci-kit Image and Sci-kit learn.  You may want to check out the &lt;a href=&quot;&quot;&gt;scikit-image&lt;/a&gt; and &lt;a href=&quot;http://scikit-learn.org/stable/documentation.html&quot;&gt;scikit-learn&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;Problem with this is that that it assumes you know how to do all of this with a large set of data already. So I&amp;#39;m going to show you how to set up the environment for using Python, scikit-image and scikit-learn.  You may want to check out the &lt;a href=&quot;&quot;&gt;scikit-image&lt;/a&gt; and &lt;a href=&quot;http://scikit-learn.org/stable/documentation.html&quot;&gt;scikit-learn&lt;/a&gt; documentation.&lt;/p&gt;
 
 &lt;h2 id=&quot;toc_2&quot;&gt;Snake Charming (Installing Anaconda)&lt;/h2&gt;
 
@@ -67,7 +67,7 @@
 
 &lt;h2 id=&quot;toc_5&quot;&gt;Getting the images&lt;/h2&gt;
 
-&lt;p&gt;If you want to do this with the kaggel competition data you can down load it &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data&quot;&gt;here&lt;/a&gt; after you make an account and agree to the competition terms. You&amp;#39;ll want to download all of the files and extract them into you workspace directory. Unzipping the image files can take some time.&lt;/p&gt;
+&lt;p&gt;If you want to do this with the Kaggle competition data you can down load it &lt;a href=&quot;http://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge/data&quot;&gt;here&lt;/a&gt; after you make an account and agree to the competition terms. You&amp;#39;ll want to download all of the files and extract them into you workspace directory. Unzipping the image files can take some time.&lt;/p&gt;
 
 &lt;p&gt;The very first thing you&amp;#39;ll need to do is get a hold of the images which requires the &lt;code&gt;os&lt;/code&gt; module to access the file system so start by typing &lt;/p&gt;
 
@@ -244,7 +244,7 @@
 
 &lt;h2 id=&quot;toc_16&quot;&gt;Formatting the prediction data for submission&lt;/h2&gt;
 
-&lt;p&gt;The Kaggel competition expects the csv to be exported in a specific format so so that the tester they have can read the file correctly and perform the error calculations. For this we use numpy&amp;#39;s &lt;code&gt;.savetxt&lt;/code&gt; method. If you want to know more about how this works you can read up on numpys documentation for &lt;a href=&quot;http://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html&quot;&gt;savetxt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Kaggle competition expects the csv to be exported in a specific format so so that the tester they have can read the file correctly and perform the error calculations. For this we use numpy&amp;#39;s &lt;code&gt;.savetxt&lt;/code&gt; method. If you want to know more about how this works you can read up on numpys documentation for &lt;a href=&quot;http://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html&quot;&gt;savetxt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;For now just copy this code after your predictions have been made&lt;/p&gt;
 
@@ -355,20 +355,20 @@
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;finished you can find you predictions in Predictions folder&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Machine Learning Work Flow for Hackers]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/machine-learning-work-flow/" />
-  <id>http://localhost:4000/machine-learning-work-flow</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/machine-learning-work-flow/" />
+  <id>http://harleykwyn.com/machine-learning-work-flow</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
@@ -433,20 +433,20 @@
 
 &lt;p&gt;Go start hacking! Machine learning shouldn&amp;#39;t be left to the ivory tower.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion Functional vs Closure Part II]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/recursion-vs-closure-part-2/" />
-  <id>http://localhost:4000/recursion-vs-closure-part-2</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/recursion-vs-closure-part-2/" />
+  <id>http://harleykwyn.com/recursion-vs-closure-part-2</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -534,20 +534,20 @@
 
 &lt;p&gt;I encourage you to run &lt;a href=&quot;http://jsperf.com/tree-map-kwyn&quot;&gt;my perfJS&lt;/a&gt; on your own computer and in different browsers and report back to me what you find!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Google Comments in Jekyll]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/google-comments-in-jekyll/" />
-  <id>http://localhost:4000/google-comments-in-jekyll</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/google-comments-in-jekyll/" />
+  <id>http://harleykwyn.com/google-comments-in-jekyll</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Last post in this unofficial blog posts about blogging series. &lt;/p&gt;
@@ -588,19 +588,19 @@
 
 &lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a default icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Then on the left you&amp;#39;ll click &lt;code&gt;Edit Profile&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Now scroll all the way down to the links section and click edit&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Then scroll down to to &lt;code&gt;Contributor to&lt;/code&gt; section and &lt;code&gt;add a custom link&lt;/code&gt; that points to your main domain name or &lt;em&gt;username&lt;/em&gt;.github.io&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Great now you&amp;#39;re the author of your blog. Not that you weren&amp;#39;t before, but now you&amp;#39;re ordained by the all might Google.&lt;/p&gt;
 
@@ -619,25 +619,25 @@
 
 &lt;p&gt;Now get commenting!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Slick jekyll themes + Github Pages]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/slick-jekyll-themes-and-github-pages/" />
-  <id>http://localhost:4000/slick-jekyll-themes-and-github-pages</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" />
+  <id>http://harleykwyn.com/slick-jekyll-themes-and-github-pages</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;toc_0&quot;&gt;How can we fix that?&lt;/h3&gt;
 
@@ -647,9 +647,9 @@
 
 &lt;p&gt;Let&amp;#39;s say we want to use &lt;a href=&quot;http://jekyllthemes.org/themes/herringcove-theme/&quot;&gt;this&lt;/a&gt; theme. &lt;/p&gt;
 
-&lt;p&gt;You&amp;#39;ll got to the &amp;quot;Home Page&amp;quot; and fork the repo&lt;/p&gt;
+&lt;p&gt;You&amp;#39;ll go to the &amp;quot;Home Page&amp;quot; and fork the repo&lt;/p&gt;
 
-&lt;p&gt;Now rename the repo to your &lt;em&gt;username&lt;/em&gt;.github.io . To do this just got to the repo settings and replace &amp;quot;herring-cove&amp;quot; with &amp;quot;&lt;em&gt;username&lt;/em&gt;.github.io&amp;quot;&lt;/p&gt;
+&lt;p&gt;Now rename the repo to your &lt;em&gt;username&lt;/em&gt;.github.io . To do this just go to the repo settings and replace &amp;quot;herring-cove&amp;quot; with &amp;quot;&lt;em&gt;username&lt;/em&gt;.github.io&amp;quot;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;  ~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone username.github.io
   ~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;username.github.io
@@ -695,20 +695,20 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Custom domains and github pages]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/github-pages-custom-domain-setup/" />
-  <id>http://localhost:4000/github-pages-custom-domain-setup</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/github-pages-custom-domain-setup/" />
+  <id>http://harleykwyn.com/github-pages-custom-domain-setup</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Github pages are awesome, and with jekyll and cool themes--like the one I&amp;#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. &lt;em&gt;username&lt;/em&gt;.github.io. Wait this is my page! Not github&amp;#39;s...&lt;/p&gt;
@@ -725,8 +725,8 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;ol&gt;
 &lt;li&gt;When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.&lt;/li&gt;
-&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://localhost:4000/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
-&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://localhost:4000/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
+&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Create a CNAME file in your &lt;em&gt;username&lt;/em&gt;.github.io repo
 CNAME file should point to your domain name this is easily done in the root of your directory with something like &lt;/p&gt;&lt;/li&gt;
@@ -744,20 +744,20 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion, Closure, and Iteration]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/recursion-closure-and-iteration/" />
-  <id>http://localhost:4000/recursion-closure-and-iteration</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/recursion-closure-and-iteration/" />
+  <id>http://harleykwyn.com/recursion-closure-and-iteration</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-23T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -842,20 +842,20 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;For larger problems recursion may run into space issues if you are not closing scope after each recursive call. &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Impostor Syndrome]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/impostor-syndrom/" />
-  <id>http://localhost:4000/impostor-syndrom</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/impostor-syndrom/" />
+  <id>http://harleykwyn.com/impostor-syndrom</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-11T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I&amp;#39;m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.&lt;/p&gt;
@@ -872,7 +872,7 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;Just remember, the majority of coders throughout their life will feel like they are in impostor. You&amp;#39;re not alone. Keep calm and code on.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://localhost:4000&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>

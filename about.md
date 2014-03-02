@@ -7,9 +7,20 @@ image:
   feature: BigSur2.jpg
 share: true
 ---
-Junior of the January 2014 [Hack Reactor](http://www.hackreactor.com/) Cohort
-Succesfully funded [Upstart](https://www.upstart.com/upstarts/kwyn-alice-meagher)
+##Technical
 
-I have a passion for real food and Bio-hacking as well as the quantified self movement. I beleive people need to become more connected with their food and more aware of the effects food has on the body.
+ - Full-stack Software Engineer.  
+ - Distributed Computing Fanatic.  
+ - Machine Learning Engineer.  
+ - [Hack Reactor](http://www.hackreactor.com/) January 2014 Cohort  
+ - Successfully funded [Upstart](https://www.upstart.com/upstarts/kwyn-alice-meagher)  
 
-As far as hobbies go, I love olympic lifting and CrossFit however, I'm also working on hacking strength development with HIIT and Body by Science principles. Sadly all of this currently on hold until I finish Hack Reactor. 
+##Personal
+
+I have a passion for real food and Bio-hacking as well as the quantified self movement. I believe people need to become more connected with their food and more aware of the effects food has on the body.
+
+As far as hobbies go, I love Olympic lifting and CrossFit however, I'm also working on hacking strength development with HIIT and Body by Science principles. Sadly all of this currently on hold until I finish Hack Reactor.
+
+##Projects
+[Suffixer](http://harleykwyn.com/suffixer)
+Top level domain name generator for your next hot Startup, Application, or Project. Be the next famo.us or bit.ly
