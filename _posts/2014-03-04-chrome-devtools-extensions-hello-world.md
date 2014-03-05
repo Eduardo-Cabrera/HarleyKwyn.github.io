@@ -41,6 +41,7 @@ To create dev extension you have to have a `devtools_page` key on the `manifest.
 Next is simple enough. You have to define your `devtools.html` or whatever you decided to name your html file. Which for hte moment only need to contain a devtools javascript file. 
 
 {% highlight html %}
+<!DOCTYPE html>
 <html>
   <body>
     <script src="devtools.js"></script>
