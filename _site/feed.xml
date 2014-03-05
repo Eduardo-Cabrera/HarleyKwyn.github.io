@@ -2,27 +2,97 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Harley Kwyn Hacking</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://harleykwyn.com/feed.xml" />
-<link rel="alternate" type="text/html" href="http://harleykwyn.com" />
-<updated>2014-03-02T20:16:54+00:00</updated>
-<id>http://harleykwyn.com/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2014-03-05T03:03:43+00:00</updated>
+<id>/</id>
 <author>
   <name>Kwyn Alice Meagher</name>
-  <uri>http://harleykwyn.com/</uri>
+  <uri>/</uri>
   <email>kwyn.meagher@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[Hello World App for Chrome Devtools Extensions]]></title>
+ <link rel="alternate" type="text/html" href="/chrome-devtools-extensions-hello-world/" />
+  <id>/chrome-devtools-extensions-hello-world</id>
+  <updated>2014-02-27T00:00:00-00:00</updated>
+  <published>2014-03-04T00:00:00+00:00</published>
+  
+  <author>
+    <name>Kwyn Alice Meagher</name>
+    <uri></uri>
+    <email>kwyn.meagher@gmail.com</email>
+  </author>
+  <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;I&amp;#39;m attempting to build a visualizer for scope and variable assignment in JavaScript and I wanted to leverage the power of chrome devtools which exposes these in their source panel. &lt;/p&gt;
+
+&lt;p&gt;The awesome thing about the chrome developer console is that it is written in JavaScript HTML and CSS, so you can build a web app inside of it.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;ve never build a chrome extension before follow these tutorials to get started.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://developer.chrome.com/extensions/overview&quot;&gt;Chrome Extensions Overview&lt;/a&gt;
+&lt;a href=&quot;http://developer.chrome.com/extensions/getstarted&quot;&gt;Chrome Extensions Example&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;#39;ve finished those you can start with the hello world app. Here&amp;#39;s some more documentation that may be helpful if you get lost. &lt;a href=&quot;http://developer.chrome.com/extensions/devtools&quot;&gt;Extending Chrome Developer Tools&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After going through those first few tutorials you&amp;#39;ll have gathered by now that we at least need a &lt;code&gt;manifest.json&lt;/code&gt; object.  &lt;/p&gt;
+
+&lt;p&gt;To create dev extension you have to have a &lt;code&gt;devtools_page&lt;/code&gt; key on the &lt;code&gt;manifest.json&lt;/code&gt;. It should looks something like the following: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;myFirstDevExtension&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;0.0.1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;minimum_chrome_version&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;10.0&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;devtools_page&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;devtools.html&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;manifest_version&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next is simple enough. You have to define your &lt;code&gt;devtools.html&lt;/code&gt; or whatever you decided to name your html file. Which for hte moment only need to contain a devtools javascript file. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;devtools.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;devtools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;panels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;My Panel&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;Panel.html&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// code invoked on panel creation&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To get a panel up and running with some html all you need to do is create a &lt;code&gt;Panel.html&lt;/code&gt; file and include whatever you like in it now. You could put cat gifs int here if you&amp;#39;d really like but you should also now have access ot all of your tools through communications between &lt;code&gt;Panel.html&lt;/code&gt; , &lt;code&gt;devtools.js&lt;/code&gt; , and &lt;code&gt;dectools.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For now we can just put a loud and proud &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; tag in there.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello World&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can theoretically run an entire angular app within this window. In later posts I may delve more into this and how to use the special devtools available to us within these confines.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;/chrome-devtools-extensions-hello-world/&quot;&gt;Hello World App for Chrome Devtools Extensions&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on March 04, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[So You Want to be a Kaggle Wizard]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/" />
-  <id>http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard</id>
+ <link rel="alternate" type="text/html" href="/so-you-want-to-be-a-kaggle-wizard/" />
+  <id>/so-you-want-to-be-a-kaggle-wizard</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
@@ -355,20 +425,20 @@
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;finished you can find you predictions in Predictions folder&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Machine Learning Work Flow for Hackers]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/machine-learning-work-flow/" />
-  <id>http://harleykwyn.com/machine-learning-work-flow</id>
+ <link rel="alternate" type="text/html" href="/machine-learning-work-flow/" />
+  <id>/machine-learning-work-flow</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
@@ -433,20 +503,20 @@
 
 &lt;p&gt;Go start hacking! Machine learning shouldn&amp;#39;t be left to the ivory tower.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion Functional vs Closure Part II]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/recursion-vs-closure-part-2/" />
-  <id>http://harleykwyn.com/recursion-vs-closure-part-2</id>
+ <link rel="alternate" type="text/html" href="/recursion-vs-closure-part-2/" />
+  <id>/recursion-vs-closure-part-2</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -534,20 +604,20 @@
 
 &lt;p&gt;I encourage you to run &lt;a href=&quot;http://jsperf.com/tree-map-kwyn&quot;&gt;my perfJS&lt;/a&gt; on your own computer and in different browsers and report back to me what you find!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Google Comments in Jekyll]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/google-comments-in-jekyll/" />
-  <id>http://harleykwyn.com/google-comments-in-jekyll</id>
+ <link rel="alternate" type="text/html" href="/google-comments-in-jekyll/" />
+  <id>/google-comments-in-jekyll</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Last post in this unofficial blog posts about blogging series. &lt;/p&gt;
@@ -588,19 +658,19 @@
 
 &lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a default icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Then on the left you&amp;#39;ll click &lt;code&gt;Edit Profile&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Now scroll all the way down to the links section and click edit&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Then scroll down to to &lt;code&gt;Contributor to&lt;/code&gt; section and &lt;code&gt;add a custom link&lt;/code&gt; that points to your main domain name or &lt;em&gt;username&lt;/em&gt;.github.io&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Great now you&amp;#39;re the author of your blog. Not that you weren&amp;#39;t before, but now you&amp;#39;re ordained by the all might Google.&lt;/p&gt;
 
@@ -619,25 +689,25 @@
 
 &lt;p&gt;Now get commenting!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Slick jekyll themes + Github Pages]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" />
-  <id>http://harleykwyn.com/slick-jekyll-themes-and-github-pages</id>
+ <link rel="alternate" type="text/html" href="/slick-jekyll-themes-and-github-pages/" />
+  <id>/slick-jekyll-themes-and-github-pages</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;toc_0&quot;&gt;How can we fix that?&lt;/h3&gt;
 
@@ -695,20 +765,20 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Custom domains and github pages]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/github-pages-custom-domain-setup/" />
-  <id>http://harleykwyn.com/github-pages-custom-domain-setup</id>
+ <link rel="alternate" type="text/html" href="/github-pages-custom-domain-setup/" />
+  <id>/github-pages-custom-domain-setup</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Github pages are awesome, and with jekyll and cool themes--like the one I&amp;#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. &lt;em&gt;username&lt;/em&gt;.github.io. Wait this is my page! Not github&amp;#39;s...&lt;/p&gt;
@@ -725,8 +795,8 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;ol&gt;
 &lt;li&gt;When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.&lt;/li&gt;
-&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
-&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
+&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Create a CNAME file in your &lt;em&gt;username&lt;/em&gt;.github.io repo
 CNAME file should point to your domain name this is easily done in the root of your directory with something like &lt;/p&gt;&lt;/li&gt;
@@ -744,20 +814,20 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion, Closure, and Iteration]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/recursion-closure-and-iteration/" />
-  <id>http://harleykwyn.com/recursion-closure-and-iteration</id>
+ <link rel="alternate" type="text/html" href="/recursion-closure-and-iteration/" />
+  <id>/recursion-closure-and-iteration</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-23T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -842,20 +912,20 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;For larger problems recursion may run into space issues if you are not closing scope after each recursive call. &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Impostor Syndrome]]></title>
- <link rel="alternate" type="text/html" href="http://harleykwyn.com/impostor-syndrom/" />
-  <id>http://harleykwyn.com/impostor-syndrom</id>
+ <link rel="alternate" type="text/html" href="/impostor-syndrom/" />
+  <id>/impostor-syndrom</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-11T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri>http://harleykwyn.com</uri>
+    <uri></uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I&amp;#39;m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.&lt;/p&gt;
@@ -872,7 +942,7 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;Just remember, the majority of coders throughout their life will feel like they are in impostor. You&amp;#39;re not alone. Keep calm and code on.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
