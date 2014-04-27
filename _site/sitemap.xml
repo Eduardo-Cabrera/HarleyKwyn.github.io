@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc></loc>
+        <loc>http://harleykwyn.com</loc>
     </url>
     
     
     <url>
-        <loc>/chrome-devtools-extensions-hello-world/</loc>
+        <loc>http://harleykwyn.com/chrome-devtools-extensions-hello-world/</loc>
     </url>
     
     <url>
-        <loc>/so-you-want-to-be-a-kaggle-wizard/</loc>
+        <loc>http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/</loc>
     </url>
     
     <url>
-        <loc>/machine-learning-work-flow/</loc>
+        <loc>http://harleykwyn.com/machine-learning-work-flow/</loc>
     </url>
     
     <url>
-        <loc>/recursion-vs-closure-part-2/</loc>
+        <loc>http://harleykwyn.com/google-comments-in-jekyll/</loc>
     </url>
     
     <url>
-        <loc>/google-comments-in-jekyll/</loc>
+        <loc>http://harleykwyn.com/Recursion-vs-closure-part-2/</loc>
     </url>
     
     <url>
-        <loc>/slick-jekyll-themes-and-github-pages/</loc>
+        <loc>http://harleykwyn.com/slick-jekyll-themes-and-github-pages/</loc>
     </url>
     
     <url>
-        <loc>/github-pages-custom-domain-setup/</loc>
+        <loc>http://harleykwyn.com/github-pages-custom-domain-setup/</loc>
     </url>
     
     <url>
-        <loc>/recursion-closure-and-iteration/</loc>
+        <loc>http://harleykwyn.com/Recursion-closure-and-iteration/</loc>
     </url>
     
     <url>
-        <loc>/impostor-syndrom/</loc>
+        <loc>http://harleykwyn.com/impostor-syndrom/</loc>
     </url>
     
 </urlset>

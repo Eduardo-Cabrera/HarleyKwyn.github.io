@@ -18,13 +18,7 @@ image:
     {% endif %}
   </header>
   <div class="entry-content">
-      {% if post.content contains "<!-- more -->" %}
-        {{ post.content | split:"<!-- more -->" | first % }}
-        <div "read-more"><a href="{{site.url}}{{post.url}}">Read More</a></div>
-      {% else %}
-        {{ post.content | strip_html | truncatewords:100 }}
-        <div "read-more"><a href="{{site.url}}{{post.url}}">Read More</a></div>
-      {% endif %}
+        <p>{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 140 }}&hellip;{% endif %}</p>
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {% endfor %}

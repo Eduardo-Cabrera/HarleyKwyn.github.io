@@ -2,27 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Harley Kwyn Hacking</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2014-03-05T03:03:43+00:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://harleykwyn.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://harleykwyn.com" />
+<updated>2014-04-27T20:45:43+00:00</updated>
+<id>http://harleykwyn.com/</id>
 <author>
   <name>Kwyn Alice Meagher</name>
-  <uri>/</uri>
+  <uri>http://harleykwyn.com/</uri>
   <email>kwyn.meagher@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Hello World App for Chrome Devtools Extensions]]></title>
- <link rel="alternate" type="text/html" href="/chrome-devtools-extensions-hello-world/" />
-  <id>/chrome-devtools-extensions-hello-world</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/chrome-devtools-extensions-hello-world/" />
+  <id>http://harleykwyn.com/chrome-devtools-extensions-hello-world</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-03-04T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
@@ -55,7 +55,8 @@
 
 &lt;p&gt;Next is simple enough. You have to define your &lt;code&gt;devtools.html&lt;/code&gt; or whatever you decided to name your html file. Which for hte moment only need to contain a devtools javascript file. &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;devtools.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
@@ -79,20 +80,20 @@
 
 &lt;p&gt;You can theoretically run an entire angular app within this window. In later posts I may delve more into this and how to use the special devtools available to us within these confines.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/chrome-devtools-extensions-hello-world/&quot;&gt;Hello World App for Chrome Devtools Extensions&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on March 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/chrome-devtools-extensions-hello-world/&quot;&gt;Hello World App for Chrome Devtools Extensions&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on March 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[So You Want to be a Kaggle Wizard]]></title>
- <link rel="alternate" type="text/html" href="/so-you-want-to-be-a-kaggle-wizard/" />
-  <id>/so-you-want-to-be-a-kaggle-wizard</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/" />
+  <id>http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
@@ -425,20 +426,20 @@
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;finished you can find you predictions in Predictions folder&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/so-you-want-to-be-a-kaggle-wizard/&quot;&gt;So You Want to be a Kaggle Wizard&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Machine Learning Work Flow for Hackers]]></title>
- <link rel="alternate" type="text/html" href="/machine-learning-work-flow/" />
-  <id>/machine-learning-work-flow</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/machine-learning-work-flow/" />
+  <id>http://harleykwyn.com/machine-learning-work-flow</id>
   <updated>2014-02-27T00:00:00-00:00</updated>
   <published>2014-02-27T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h1 id=&quot;toc_0&quot;&gt;Background&lt;/h1&gt;
@@ -503,20 +504,105 @@
 
 &lt;p&gt;Go start hacking! Machine learning shouldn&amp;#39;t be left to the ivory tower.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/machine-learning-work-flow/&quot;&gt;Machine Learning Work Flow for Hackers&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on February 27, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[Recursion Functional vs Closure Part II]]></title>
- <link rel="alternate" type="text/html" href="/recursion-vs-closure-part-2/" />
-  <id>/recursion-vs-closure-part-2</id>
+  <title type="html"><![CDATA[Google Comments in Jekyll]]></title>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/google-comments-in-jekyll/" />
+  <id>http://harleykwyn.com/google-comments-in-jekyll</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-28T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
+    <email>kwyn.meagher@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Last post in this unofficial blog posts about blogging series. &lt;/p&gt;
+
+&lt;p&gt;Without a discussion about what you&amp;#39;re posting your blog isn&amp;#39;t very valueble. Disque can be easy to use but if you&amp;#39;re like me you beleive in google+ and would love to have that as the commenting platform for your blog.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s jump into how to get this installed.&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_0&quot;&gt;Installation&lt;/h1&gt;
+
+&lt;p&gt;Be sure that you have jQuery included in the scripts at the beginning of your post layout. &lt;/p&gt;
+
+&lt;p&gt;typically found under your &lt;code&gt;_includes&lt;/code&gt; file &lt;code&gt;scripts.html&lt;/code&gt; and should look kind of like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Find where you want your comments to appear in your site&amp;#39;s HTML. Preferably the comments will be post specific so it&amp;#39;s most likely to be found in &lt;code&gt;_layout&lt;/code&gt; in something that look like &lt;code&gt;post.html&lt;/code&gt; and in a wrapper, quite possibly a &lt;code&gt;&amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt;&lt;/code&gt; tab&lt;/p&gt;
+
+&lt;p&gt;Copy this div into that container&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;gapi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;comments&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;624&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;first_party_property&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;BLOGGER&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;view_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;FILTERED_POSTMOD&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;toc_1&quot;&gt;Setting up Google Authorship&lt;/h1&gt;
+
+&lt;p&gt;So for this script to work, Google needs to be sure you&amp;#39;re associated with this page. To do this we need to setup Google Authorship.&lt;/p&gt;
+
+&lt;p&gt;This can be done by navigating to your Google+ profile.&lt;/p&gt;
+
+&lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a default icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Then on the left you&amp;#39;ll click &lt;code&gt;Edit Profile&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Now scroll all the way down to the links section and click edit&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Then scroll down to to &lt;code&gt;Contributor to&lt;/code&gt; section and &lt;code&gt;add a custom link&lt;/code&gt; that points to your main domain name or &lt;em&gt;username&lt;/em&gt;.github.io&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Great now you&amp;#39;re the author of your blog. Not that you weren&amp;#39;t before, but now you&amp;#39;re ordained by the all might Google.&lt;/p&gt;
+
+&lt;h1 id=&quot;toc_2&quot;&gt;Linking your Google account to your page&lt;/h1&gt;
+
+&lt;p&gt;So one last step add a link to your Google+ profile to your page. Using the following code. the &lt;code&gt;href&lt;/code&gt; should be your profile URL + &lt;code&gt;?rel=author&lt;/code&gt; otherwise Google will not &lt;em&gt;relate&lt;/em&gt; your authorship to the page.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/+YourProfileName?&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;   rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You&amp;#39;ll notice my name in the footer next to the copy write symbol, I went ahead and sneakily put it there in the &lt;code&gt;footer.html&lt;/code&gt; template. Like so:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/+KwynMeagher?rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; Kwyn Alice Meagher &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now get commenting!&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Recursion Functional vs Closure Part II]]></title>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/Recursion-vs-closure-part-2/" />
+  <id>http://harleykwyn.com/Recursion-vs-closure-part-2</id>
+  <updated>2014-01-28T00:00:00-00:00</updated>
+  <published>2014-01-28T00:00:00+00:00</published>
+  
+  <author>
+    <name>Kwyn Alice Meagher</name>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -604,110 +690,25 @@
 
 &lt;p&gt;I encourage you to run &lt;a href=&quot;http://jsperf.com/tree-map-kwyn&quot;&gt;my perfJS&lt;/a&gt; on your own computer and in different browsers and report back to me what you find!&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Google Comments in Jekyll]]></title>
- <link rel="alternate" type="text/html" href="/google-comments-in-jekyll/" />
-  <id>/google-comments-in-jekyll</id>
-  <updated>2014-01-28T00:00:00-00:00</updated>
-  <published>2014-01-28T00:00:00+00:00</published>
-  
-  <author>
-    <name>Kwyn Alice Meagher</name>
-    <uri></uri>
-    <email>kwyn.meagher@gmail.com</email>
-  </author>
-  <content type="html">&lt;p&gt;Last post in this unofficial blog posts about blogging series. &lt;/p&gt;
-
-&lt;p&gt;Without a discussion about what you&amp;#39;re posting your blog isn&amp;#39;t very valueble. Disque can be easy to use but if you&amp;#39;re like me you beleive in google+ and would love to have that as the commenting platform for your blog.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s jump into how to get this installed.&lt;/p&gt;
-
-&lt;h1 id=&quot;toc_0&quot;&gt;Installation&lt;/h1&gt;
-
-&lt;p&gt;Be sure that you have jQuery included in the scripts at the beginning of your post layout. &lt;/p&gt;
-
-&lt;p&gt;typically found under your &lt;code&gt;_includes&lt;/code&gt; file &lt;code&gt;scripts.html&lt;/code&gt; and should look kind of like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Find where you want your comments to appear in your site&amp;#39;s HTML. Preferably the comments will be post specific so it&amp;#39;s most likely to be found in &lt;code&gt;_layout&lt;/code&gt; in something that look like &lt;code&gt;post.html&lt;/code&gt; and in a wrapper, quite possibly a &lt;code&gt;&amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt;&lt;/code&gt; tab&lt;/p&gt;
-
-&lt;p&gt;Copy this div into that container&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;comments&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;gapi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;comments&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;624&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;first_party_property&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;BLOGGER&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;view_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;FILTERED_POSTMOD&amp;#39;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;toc_1&quot;&gt;Setting up Google Authorship&lt;/h1&gt;
-
-&lt;p&gt;So for this script to work, Google needs to be sure you&amp;#39;re associated with this page. To do this we need to setup Google Authorship.&lt;/p&gt;
-
-&lt;p&gt;This can be done by navigating to your Google+ profile.&lt;/p&gt;
-
-&lt;p&gt;At the top right of the page you&amp;#39;ll see your face! (or a default icon) click on that and then click on &lt;code&gt;Account&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/GooglePlusAccount.png&quot; alt=&quot;Google+ Account&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Then on the left you&amp;#39;ll click &lt;code&gt;Edit Profile&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/GooglePlusEdit.png&quot; alt=&quot;Google+ Edit Profile&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Now scroll all the way down to the links section and click edit&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/GooglePlusLinks.png&quot; alt=&quot;Google+ Links&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Then scroll down to to &lt;code&gt;Contributor to&lt;/code&gt; section and &lt;code&gt;add a custom link&lt;/code&gt; that points to your main domain name or &lt;em&gt;username&lt;/em&gt;.github.io&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/GooglePlusURL.png&quot; alt=&quot;Google+ Links add URL&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Great now you&amp;#39;re the author of your blog. Not that you weren&amp;#39;t before, but now you&amp;#39;re ordained by the all might Google.&lt;/p&gt;
-
-&lt;h1 id=&quot;toc_2&quot;&gt;Linking your Google account to your page&lt;/h1&gt;
-
-&lt;p&gt;So one last step add a link to your Google+ profile to your page. Using the following code. the &lt;code&gt;href&lt;/code&gt; should be your profile URL + &lt;code&gt;?rel=author&lt;/code&gt; otherwise Google will not &lt;em&gt;relate&lt;/em&gt; your authorship to the page.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/+YourProfileName?&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;   rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You&amp;#39;ll notice my name in the footer next to the copy write symbol, I went ahead and sneakily put it there in the &lt;code&gt;footer.html&lt;/code&gt; template. Like so:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://plus.google.com/+KwynMeagher?rel=author&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; Kwyn Alice Meagher &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now get commenting!&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;/google-comments-in-jekyll/&quot;&gt;Google Comments in Jekyll&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/Recursion-vs-closure-part-2/&quot;&gt;Recursion Functional vs Closure Part II&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Slick jekyll themes + Github Pages]]></title>
- <link rel="alternate" type="text/html" href="/slick-jekyll-themes-and-github-pages/" />
-  <id>/slick-jekyll-themes-and-github-pages</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/slick-jekyll-themes-and-github-pages/" />
+  <id>http://harleykwyn.com/slick-jekyll-themes-and-github-pages</id>
   <updated>2014-01-28T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Cool, so you have your custom URL pointing to your github.io page. But it still looks like this.:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://harleykwyn.com/images/StandardJekyll.png&quot; alt=&quot;Out of box Jekyll&quot;&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;toc_0&quot;&gt;How can we fix that?&lt;/h3&gt;
 
@@ -765,20 +766,20 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/slick-jekyll-themes-and-github-pages/&quot;&gt;Slick jekyll themes + Github Pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Custom domains and github pages]]></title>
- <link rel="alternate" type="text/html" href="/github-pages-custom-domain-setup/" />
-  <id>/github-pages-custom-domain-setup</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/github-pages-custom-domain-setup/" />
+  <id>http://harleykwyn.com/github-pages-custom-domain-setup</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-26T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;Github pages are awesome, and with jekyll and cool themes--like the one I&amp;#39;m using right now--you can make a rather polished looking blog in no time. Problem is... that ugly URL up there. &lt;em&gt;username&lt;/em&gt;.github.io. Wait this is my page! Not github&amp;#39;s...&lt;/p&gt;
@@ -795,8 +796,8 @@ Another helpful thing to know is that you can test if your edits will build usin
 
 &lt;ol&gt;
 &lt;li&gt;When at GoDaddy navigate to the DNS Zone File of the domain page you want to point to your github.io page.&lt;/li&gt;
-&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
-&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Click Edit and add two &amp;quot;A (host)&amp;quot;&amp;quot; to point to 192.30.252.153 and 192.30.252.154 like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile1.png&quot; alt=&quot;GoDaddyZoneFile1&quot;&gt;&lt;/li&gt;
+&lt;li&gt;set the www alias to point to your &lt;em&gt;username&lt;/em&gt;.github.io like the following image &lt;img src=&quot;http://harleykwyn.com/images/GoDaddyZoneFile2.png&quot; alt=&quot;GoDaddyZoneFile2&quot;&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Create a CNAME file in your &lt;em&gt;username&lt;/em&gt;.github.io repo
 CNAME file should point to your domain name this is easily done in the root of your directory with something like &lt;/p&gt;&lt;/li&gt;
@@ -814,20 +815,20 @@ CNAME file should point to your domain name this is easily done in the root of y
 
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/github-pages-custom-domain-setup/&quot;&gt;Custom domains and github pages&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 26, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Recursion, Closure, and Iteration]]></title>
- <link rel="alternate" type="text/html" href="/recursion-closure-and-iteration/" />
-  <id>/recursion-closure-and-iteration</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/Recursion-closure-and-iteration/" />
+  <id>http://harleykwyn.com/Recursion-closure-and-iteration</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-23T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Background&lt;/h2&gt;
@@ -912,20 +913,20 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;For larger problems recursion may run into space issues if you are not closing scope after each recursive call. &lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/Recursion-closure-and-iteration/&quot;&gt;Recursion, Closure, and Iteration&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Impostor Syndrome]]></title>
- <link rel="alternate" type="text/html" href="/impostor-syndrom/" />
-  <id>/impostor-syndrom</id>
+ <link rel="alternate" type="text/html" href="http://harleykwyn.com/impostor-syndrom/" />
+  <id>http://harleykwyn.com/impostor-syndrom</id>
   <updated>2014-01-26T00:00:00-00:00</updated>
   <published>2014-01-11T00:00:00+00:00</published>
   
   <author>
     <name>Kwyn Alice Meagher</name>
-    <uri></uri>
+    <uri>http://harleykwyn.com</uri>
     <email>kwyn.meagher@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;I love pair programming. It has amazing advantages and I feel I learn a lot about coding when I&amp;#39;m working with another developer whether they be more or less advanced than myself. However, often I feel like an impostor. Am I coding or is my pair doing all the coding? This is the question I find myself asking often.&lt;/p&gt;
@@ -942,7 +943,7 @@ Teacher going to each student and telling them to write their answer down on a n
 
 &lt;p&gt;Just remember, the majority of coders throughout their life will feel like they are in impostor. You&amp;#39;re not alone. Keep calm and code on.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://harleykwyn.com/impostor-syndrom/&quot;&gt;Impostor Syndrome&lt;/a&gt; was originally published by Kwyn Alice Meagher at &lt;a href=&quot;http://harleykwyn.com&quot;&gt;Harley Kwyn Hacking&lt;/a&gt; on January 11, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
