@@ -16,6 +16,7 @@ share: true
  - Hacker in Residence @ Hack Reactor. Prestigeous graduate program.
  - Successfully funded [Upstart](https://www.upstart.com/upstarts/kwyn-alice-meagher)
 
+##Resume
 Find my resume here: [Resume](http://harleykwyn.com/resume/)
 
 ##Personal
