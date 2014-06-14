@@ -14,7 +14,9 @@ share: true
  - Machine Learning Engineer. 
  - [Hack Reactor](http://www.hackreactor.com/) January 2014 Cohort  
  - Hacker in Residence @ Hack Reactor. Prestigeous graduate program.
- - Successfully funded [Upstart](https://www.upstart.com/upstarts/kwyn-alice-meagher)  
+ - Successfully funded [Upstart](https://www.upstart.com/upstarts/kwyn-alice-meagher)
+
+Find my resume here: [Resume](http://harleykwyn.com/resume/)
 
 ##Personal
 
@@ -23,5 +25,3 @@ I have a passion for real food and Bio-hacking as well as the quantified self mo
 As far as hobbies go, I love Olympic lifting and CrossFit however, I'm also working on hacking strength development with HIIT and Body by Science principles. Sadly all of this currently on hold until I finish Hack Reactor.
 
 I beleive there's a lot wrong with our current food systems and health care systems and I want to actively work to change this. If you have a company oriented in this regard please reach out to me.
-
-##[Resume](http://harleykwyn.com/resume/)
