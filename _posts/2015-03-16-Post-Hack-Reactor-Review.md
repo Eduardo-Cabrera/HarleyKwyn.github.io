@@ -46,7 +46,7 @@ The long version: It was stressful, but every job search is stressful. Hack Reac
 
 
 ###How did you prepare for Hack Reactor?
-My personal journey prior to attending HR was much more gradual. I had a knack for programming ever since taking the Intro to Programming courses at UC Merced. I even took C++ for fun my senior year because I wanted to know more. This is the kind of mentality you must have going into Hack Reactor to be wildly successful: One of curiosity, exploration, and the willingness to do something new and scary.
+My personal journey prior to attending HR was much more gradual. I had enjoyed programming ever since taking the Intro to Programming courses at UC Merced. I even took C++ for fun my senior year because I wanted to know more. This is the kind of mentality you must have going into Hack Reactor to be wildly successful: One of curiosity, exploration, and the willingness to do something new and scary.
 
 As far as resources to point you to: In order to prepare for Hack Reactor interviews and coursework, I did  [Coderbyte challenges in JavaScript](http://coderbyte.com/CodingArea/Challenges) up through the intermediate levels and some of the challenging ones and took [Code School](https://www.codeschool.com/paths/javascript#jquery-basics) and [Code Academy](http://www.codecademy.com/tracks/javascript) courses in [JavaScript and jQuery](https://www.codeschool.com/paths/javascript#jquery-basics).
 
