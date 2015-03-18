@@ -5,7 +5,7 @@ description: "From coding boot camp, to Uber, to Hardware"
 modified: 2015-03-20
 tags: [Hack Reactor, Career Accelerators, Coding Bootcamps, TechHire]
 image:
-  feature: hrx.png
+  feature: hrx.jpg
 comments: true
 share: true
 ---
@@ -45,7 +45,7 @@ The long version is it was stressful, but every job search is stressful. However
 ###How did you prepare for Hack Reactor?
 My personally journey was much more gradual. I had a knack for programming ever since taking the intro to programming courses at UC Merced. I even took C++ for fun my senior year because I wanted to know more. This is the kind of mentality you must have going into Hack Reactor to be wildly successful. One of curiosity and exploration, the willing to do something new and scary in spite of and because it is just that, new, and scary.
 
-As far as resources to point you to. I did [Coderbyte challenges in JavaScript]up through the intermediate levels and some of the challenging ones and took [Code School](https://www.codeschool.com/paths/javascript#jquery-basics) and [Code Academy](http://www.codecademy.com/tracks/javascript) courses in [JavaScript and jQuery](https://www.codeschool.com/paths/javascript#jquery-basics).
+As far as resources to point you to. I did [Coderbyte challenges in JavaScript](http://coderbyte.com/CodingArea/Challenges) up through the intermediate levels and some of the challenging ones and took [Code School](https://www.codeschool.com/paths/javascript#jquery-basics) and [Code Academy](http://www.codecademy.com/tracks/javascript) courses in [JavaScript and jQuery](https://www.codeschool.com/paths/javascript#jquery-basics).
 
 ###Reflection (Was it worth it)?
 I wouldn't give it up for anything. I've made so many friends I'm sure are going to be life long and the network of Hack Reactor students is ever growing. Hack Reactor taught me how to learn and *use* most any tool within two days. It's like having a super power almost, but nearly everyone has it built into them if they can learn to unlock it.
