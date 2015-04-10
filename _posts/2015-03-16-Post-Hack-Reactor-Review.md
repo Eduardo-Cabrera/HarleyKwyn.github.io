@@ -32,7 +32,7 @@ Hack Reactor now has [Need blind pricing](http://www.hackreactor.com/blog/announ
 ###How much is housing in San Francisco?
 Inside of San Francisco the cost of housing is outrageous. Studio apartments frequently go for more than $3,000 per month, and housing is not included in Hack Reactor’s tuition. However, there’s no reason to live by yourself while at Hack Reactor--you’ll only be there for three months, after all!--and I encourage you to find a cheaper situation at a hostel or with a group of other students. I ended up paying about $1,000 per month at a hostel, which is decent but may be difficult to find. I suggest you look many months in advance and network with people in your cohort, and/or call in all family favors, learn to cook, forage, dumpster dive... Point is, do whatever you have to do to make it work--that kind of spirit will serve you well!
 
-I'd also suggest looking in the peninsula and East Nay. Anything along the [BART](http://www.bart.gov/schedules/bystation) l line is doable. You're going to spend most of your time at Hack Reactor, so there’s no need to have lavish living quarters.
+I'd also suggest looking in the peninsula and East Bay. Anything along the [BART](http://www.bart.gov/schedules/bystation) l line is doable. You're going to spend most of your time at Hack Reactor, so there’s no need to have lavish living quarters.
 
 ###Is the 99% number real?
 It's very real and [this response on Quora](http://www.quora.com/What-are-some-suspected-reasons-why-some-Hack-Reactor-graduates-the-2-are-unable-to-find-software-engineering-jobs-upon-graduation) sums it up perfectly.
